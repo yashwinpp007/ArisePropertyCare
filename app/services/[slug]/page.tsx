@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CheckCircle2, ArrowRight, Phone, Users } from "lucide-react";
 import { services, getServiceBySlug } from "@/lib/data/services";
@@ -97,7 +98,16 @@ export default async function ServicePage({
               </div>
             </div>
 
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+                <Image
+                  src={service.image}
+                  alt={`${service.name} being carried out by an Arise Property Care cleaner`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                 <QuickAnswerDark>{service.quickAnswer}</QuickAnswerDark>
               </div>

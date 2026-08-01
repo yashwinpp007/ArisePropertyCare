@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ShieldCheck, Leaf, Award, Users2, MapPin, ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { StatCounter } from "@/components/shared/stat-counter";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/shared/reveal";
-import { AbstractPanel } from "@/components/shared/abstract-panel";
 import { Button } from "@/components/ui/button";
 import { CtaSection } from "@/components/sections/cta-section";
 
@@ -86,8 +86,16 @@ export default function AboutPage() {
                 </Button>
               </div>
             </div>
-            <AbstractPanel variant="navy" pattern={1} className="aspect-[4/3] rounded-3xl">
-              <div className="text-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+              <Image
+                src="/photos/about-cleaning.jpg"
+                alt="Arise Property Care cleaner using eco-friendly cleaning products"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-950/85 via-brand-navy-950/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-center">
                 <MapPin className="mx-auto size-8 text-brand-emerald-300" />
                 <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-brand-emerald-300">
                   Based in
@@ -95,7 +103,7 @@ export default function AboutPage() {
                 <p className="mt-1 text-2xl font-bold text-white">Seven Hills, NSW</p>
                 <p className="mt-1 text-sm text-white/60">{siteConfig.fullAddress}</p>
               </div>
-            </AbstractPanel>
+            </div>
           </div>
         </div>
       </section>

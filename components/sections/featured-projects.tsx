@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { Building2, KeyRound, Building, HeartHandshake } from "lucide-react";
-import { AbstractPanel } from "@/components/shared/abstract-panel";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { StaggerGroup, StaggerItem } from "@/components/shared/reveal";
 
@@ -10,17 +10,17 @@ const projects = [
     title: "Same-Day Vacate Turnaround",
     location: "Parramatta Apartment",
     result: "Full bond returned, zero re-clean requests",
-    variant: "navy" as const,
-    pattern: 1 as const,
+    image: "/photos/project-end-of-lease.jpg",
+    alt: "Bright, freshly cleaned living room after an end of lease clean",
   },
   {
     icon: Building2,
-    category: "Retail Fit-Out",
-    title: "Post-Construction Handover Clean",
-    location: "Blacktown Retail Precinct",
-    result: "Site handed over 1 day ahead of schedule",
-    variant: "emerald" as const,
-    pattern: 4 as const,
+    category: "Commercial Contract",
+    title: "Scheduled Office Cleaning",
+    location: "Blacktown Office Precinct",
+    result: "After-hours servicing, 3x weekly",
+    image: "/photos/project-office.jpg",
+    alt: "Professional cleaner servicing a modern office space",
   },
   {
     icon: Building,
@@ -28,8 +28,8 @@ const projects = [
     title: "12-Month Common Area Servicing",
     location: "Castle Hill Apartment Complex",
     result: "5x weekly servicing across 3 towers",
-    variant: "slate" as const,
-    pattern: 2 as const,
+    image: "/photos/project-strata.jpg",
+    alt: "Modern high-rise apartment building serviced under a strata cleaning contract",
   },
   {
     icon: HeartHandshake,
@@ -37,8 +37,8 @@ const projects = [
     title: "Ongoing Household Cleaning Support",
     location: "Westmead Participant Home",
     result: "Consistent cleaner, fortnightly for 18 months",
-    variant: "navy" as const,
-    pattern: 3 as const,
+    image: "/photos/project-ndis.jpg",
+    alt: "Cleaner providing respectful household cleaning support",
   },
 ];
 
@@ -56,11 +56,19 @@ export function FeaturedProjects() {
           {projects.map((project) => (
             <StaggerItem key={project.title}>
               <article className="group overflow-hidden rounded-2xl border border-brand-grey-200 transition-shadow hover:shadow-xl hover:shadow-brand-navy-900/10">
-                <AbstractPanel variant={project.variant} pattern={project.pattern} className="h-48">
-                  <span className="relative flex size-14 items-center justify-center rounded-2xl bg-white/10 text-white backdrop-blur-sm">
-                    <project.icon className="size-6" />
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-950/70 via-brand-navy-950/10 to-transparent" />
+                  <span className="absolute bottom-4 left-4 flex size-11 items-center justify-center rounded-xl bg-white/15 text-white backdrop-blur-sm">
+                    <project.icon className="size-5" />
                   </span>
-                </AbstractPanel>
+                </div>
                 <div className="p-6">
                   <span className="text-xs font-semibold uppercase tracking-wider text-brand-emerald-600">
                     {project.category}

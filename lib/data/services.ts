@@ -8,6 +8,7 @@ export interface Service {
   name: string;
   shortName: string;
   icon: string;
+  image: string;
   tagline: string;
   heroSubtitle: string;
   quickAnswer: string;
@@ -26,6 +27,7 @@ export const services: Service[] = [
     name: "Residential Cleaning",
     shortName: "Residential",
     icon: "Home",
+    image: "/photos/service-residential.jpg",
     tagline: "Reliable house cleaning for busy Sydney households.",
     heroSubtitle:
       "Recurring and one-off house cleaning across Sydney, tailored to your home and schedule.",
@@ -81,6 +83,7 @@ export const services: Service[] = [
     name: "Commercial Cleaning",
     shortName: "Commercial",
     icon: "Building2",
+    image: "/photos/service-commercial.jpg",
     tagline: "Scheduled cleaning for retail, hospitality and industrial sites.",
     heroSubtitle:
       "Flexible after-hours and scheduled commercial cleaning for businesses across Sydney.",
@@ -131,6 +134,7 @@ export const services: Service[] = [
     name: "Office Cleaning",
     shortName: "Office",
     icon: "Briefcase",
+    image: "/photos/service-office.jpg",
     tagline: "Daily, weekly or fortnightly office cleaning contracts.",
     heroSubtitle:
       "Keep your workplace spotless with a scheduled office cleaning plan built around your business.",
@@ -181,6 +185,7 @@ export const services: Service[] = [
     name: "End of Lease Cleaning",
     shortName: "End of Lease",
     icon: "KeyRound",
+    image: "/photos/service-end-of-lease.jpg",
     tagline: "Bond-back guaranteed vacate cleaning across Sydney.",
     heroSubtitle:
       "Comprehensive move-out cleaning designed to meet real estate and landlord inspection standards.",
@@ -231,6 +236,7 @@ export const services: Service[] = [
     name: "Deep Cleaning",
     shortName: "Deep Clean",
     icon: "Sparkles",
+    image: "/photos/service-deep-clean.jpg",
     tagline: "Intensive top-to-bottom cleaning for homes and offices.",
     heroSubtitle:
       "A thorough reset for properties that need more than a standard clean — spring cleans, post-renovation and first-time cleans.",
@@ -276,6 +282,7 @@ export const services: Service[] = [
     name: "Carpet Cleaning",
     shortName: "Carpet",
     icon: "Waves",
+    image: "/photos/service-carpet.jpg",
     tagline: "Professional steam and stain treatment for carpets and rugs.",
     heroSubtitle:
       "Hot water extraction carpet cleaning that lifts dirt, allergens and stains without over-wetting.",
@@ -321,6 +328,7 @@ export const services: Service[] = [
     name: "Window Cleaning",
     shortName: "Windows",
     icon: "PanelsTopLeft",
+    image: "/photos/service-window.jpg",
     tagline: "Streak-free interior and exterior window cleaning.",
     heroSubtitle:
       "Crystal-clear glass, frames and tracks for homes, offices and multi-storey buildings.",
@@ -366,6 +374,7 @@ export const services: Service[] = [
     name: "Builders Cleaning",
     shortName: "Builders Clean",
     icon: "HardHat",
+    image: "/photos/service-builders.jpg",
     tagline: "Post-construction cleaning for handover-ready properties.",
     heroSubtitle:
       "Dust, debris and residue removal after construction, renovation or fit-out work.",
@@ -411,6 +420,7 @@ export const services: Service[] = [
     name: "Strata Cleaning",
     shortName: "Strata",
     icon: "Building",
+    image: "/photos/service-strata.jpg",
     tagline: "Common area cleaning contracts for strata and body corporate.",
     heroSubtitle:
       "Reliable, scheduled cleaning for lobbies, stairwells, car parks and shared facilities.",
@@ -456,6 +466,7 @@ export const services: Service[] = [
     name: "Airbnb & Short-Stay Cleaning",
     shortName: "Airbnb",
     icon: "BedDouble",
+    image: "/photos/service-airbnb.jpg",
     tagline: "Fast, reliable turnaround cleaning between guest stays.",
     heroSubtitle:
       "Same-day turnaround cleaning that keeps your short-stay listing five-star ready.",
@@ -501,6 +512,7 @@ export const services: Service[] = [
     name: "NDIS Cleaning",
     shortName: "NDIS",
     icon: "HeartHandshake",
+    image: "/photos/service-ndis.jpg",
     tagline: "Respectful, reliable cleaning support for NDIS participants.",
     heroSubtitle:
       "Household cleaning and domestic assistance for NDIS participants across Sydney.",
@@ -546,6 +558,7 @@ export const services: Service[] = [
     name: "Medical Centre Cleaning",
     shortName: "Medical",
     icon: "Stethoscope",
+    image: "/photos/service-medical.jpg",
     tagline: "Compliant hygiene standards for medical and allied health sites.",
     heroSubtitle:
       "Infection-control-aware cleaning for medical centres, clinics and allied health practices.",

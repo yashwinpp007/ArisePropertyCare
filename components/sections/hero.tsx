@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Phone, Star, ShieldCheck, BadgeCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,16 @@ export function Hero() {
     <section className="relative isolate overflow-hidden bg-brand-navy-950 pt-20">
       {/* Ambient background */}
       <div className="absolute inset-0 -z-10">
+        <Image
+          src="/photos/hero-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[85%_35%] opacity-45"
+        />
+        <div className="absolute inset-0 bg-brand-navy-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-950 via-brand-navy-950/85 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(0,112,72,0.28),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_85%_20%,rgba(16,148,95,0.16),transparent)]" />
         <div className="absolute inset-0 bg-grid-navy opacity-40" />
