@@ -1,0 +1,142 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ShieldCheck, Leaf, Award, Users2, MapPin, ArrowRight } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
+import { StatCounter } from "@/components/shared/stat-counter";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/shared/reveal";
+import { AbstractPanel } from "@/components/shared/abstract-panel";
+import { Button } from "@/components/ui/button";
+import { CtaSection } from "@/components/sections/cta-section";
+
+export const metadata: Metadata = buildMetadata({
+  title: "About Us | Arise Property Care",
+  description:
+    "Arise Property Care is a Seven Hills-based cleaning company serving Greater Sydney. Fully insured, police-checked cleaners with a 100% satisfaction guarantee.",
+  path: "/about",
+});
+
+const values = [
+  {
+    icon: ShieldCheck,
+    title: "Trust, first",
+    description:
+      "Every cleaner is police-checked and fully insured before they set foot on a job — no exceptions.",
+  },
+  {
+    icon: Leaf,
+    title: "Genuinely eco-friendly",
+    description:
+      "Non-toxic, commercial-grade products as standard, safe for kids, pets and allergy sufferers.",
+  },
+  {
+    icon: Award,
+    title: "Held to a standard",
+    description:
+      "Every job follows a documented checklist and is backed by our 100% satisfaction guarantee.",
+  },
+  {
+    icon: Users2,
+    title: "Consistent teams",
+    description:
+      "Wherever possible, the same cleaner returns to your property so they get to know how you like things done.",
+  },
+];
+
+const stats = [
+  { value: siteConfig.stats.yearsExperience, suffix: "+", label: "Years in business" },
+  { value: siteConfig.stats.jobsCompleted, suffix: "+", label: "Jobs completed" },
+  { value: siteConfig.stats.googleRating, decimals: 1, suffix: "/5", label: "Google rating" },
+  { value: siteConfig.stats.satisfactionRate, suffix: "%", label: "Satisfaction guarantee" },
+];
+
+export default function AboutPage() {
+  return (
+    <div className="pt-20">
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container-premium">
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
+          <div className="mt-6 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h1 className="text-balance font-heading text-4xl font-bold tracking-tight text-brand-navy-900 sm:text-5xl">
+                A Sydney cleaning team built on trust
+              </h1>
+              <p className="mt-5 text-lg leading-relaxed text-brand-grey-600">
+                Arise Property Care was founded to fix a simple problem: too many cleaning
+                companies were inconsistent, hard to reach, or cut corners on vetting. We built
+                the opposite — a fully insured, police-checked team run on documented checklists,
+                based right here in Seven Hills and servicing Greater Sydney.
+              </p>
+              <p className="mt-4 leading-relaxed text-brand-grey-600">
+                Today we clean homes, offices, strata buildings and construction sites across
+                Western Sydney and the Hills District — with the same attention to detail on job
+                one as job one thousand.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button
+                  render={<Link href="/quote" />}
+                  size="lg"
+                  className="rounded-full bg-brand-emerald-600 text-white hover:bg-brand-emerald-700"
+                >
+                  Get Free Quote <ArrowRight className="size-4" data-icon="inline-end" />
+                </Button>
+                <Button render={<Link href="/contact" />} size="lg" variant="outline" className="rounded-full">
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+            <AbstractPanel variant="navy" pattern={1} className="aspect-[4/3] rounded-3xl">
+              <div className="text-center">
+                <MapPin className="mx-auto size-8 text-brand-emerald-300" />
+                <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-brand-emerald-300">
+                  Based in
+                </p>
+                <p className="mt-1 text-2xl font-bold text-white">Seven Hills, NSW</p>
+                <p className="mt-1 text-sm text-white/60">{siteConfig.fullAddress}</p>
+              </div>
+            </AbstractPanel>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-brand-grey-200 bg-brand-grey-50 py-14">
+        <div className="container-premium">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="font-heading text-3xl font-bold text-brand-navy-900 sm:text-4xl">
+                  <StatCounter value={stat.value} decimals={stat.decimals ?? 0} suffix={stat.suffix} />
+                </p>
+                <p className="mt-1.5 text-sm font-medium text-brand-grey-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="container-premium">
+          <Reveal className="max-w-2xl">
+            <h2 className="font-heading text-3xl font-bold text-brand-navy-900">What we stand for</h2>
+          </Reveal>
+          <StaggerGroup className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map(({ icon: Icon, title, description }) => (
+              <StaggerItem key={title}>
+                <div className="h-full rounded-2xl border border-brand-grey-200 p-6">
+                  <span className="flex size-11 items-center justify-center rounded-xl bg-brand-emerald-50 text-brand-emerald-600">
+                    <Icon className="size-5" />
+                  </span>
+                  <h3 className="mt-4 font-heading text-base font-semibold text-brand-navy-900">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-grey-500">{description}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      <CtaSection />
+    </div>
+  );
+}

@@ -1,0 +1,245 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------- */
+/* Arise Property Care — design tokens                                    */
+/* Palette sampled directly from brand mark: navy #002050, emerald #007048 */
+/* ---------------------------------------------------------------------- */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-jakarta);
+  --font-mono: var(--font-geist-mono);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.5);
+
+  /* Brand scales — available as bg-brand-navy-900, text-brand-emerald-600, etc. */
+  --color-brand-navy-50: #eef2f8;
+  --color-brand-navy-100: #dce6f2;
+  --color-brand-navy-200: #b9cce5;
+  --color-brand-navy-300: #8fa9d1;
+  --color-brand-navy-400: #5c7fb5;
+  --color-brand-navy-500: #395c95;
+  --color-brand-navy-600: #244274;
+  --color-brand-navy-700: #142c58;
+  --color-brand-navy-800: #002050;
+  --color-brand-navy-900: #001638;
+  --color-brand-navy-950: #000b1f;
+
+  --color-brand-emerald-50: #e9f7f0;
+  --color-brand-emerald-100: #cfeedf;
+  --color-brand-emerald-200: #9ddcc0;
+  --color-brand-emerald-300: #66c69c;
+  --color-brand-emerald-400: #34ae7c;
+  --color-brand-emerald-500: #10945f;
+  --color-brand-emerald-600: #007048;
+  --color-brand-emerald-700: #00593a;
+  --color-brand-emerald-800: #00432c;
+  --color-brand-emerald-900: #002e1e;
+  --color-brand-emerald-950: #001a11;
+
+  --color-brand-grey-50: #f8f9fa;
+  --color-brand-grey-100: #f1f2f4;
+  --color-brand-grey-200: #e4e7eb;
+  --color-brand-grey-300: #d0d5dd;
+  --color-brand-grey-400: #98a2b3;
+  --color-brand-grey-500: #667085;
+  --color-brand-grey-600: #475467;
+  --color-brand-grey-700: #344054;
+  --color-brand-grey-800: #1d2939;
+  --color-brand-grey-900: #101828;
+  --color-brand-grey-950: #0b0f19;
+
+  --shadow-color: 214 60% 21%;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-fade-up: fade-up 0.7s var(--ease-premium) both;
+  --animate-fade-in: fade-in 0.6s var(--ease-premium) both;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b1220;
+
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --popover: #ffffff;
+  --popover-foreground: #0b1220;
+
+  --primary: #007048;
+  --primary-foreground: #ffffff;
+
+  --secondary: #002050;
+  --secondary-foreground: #ffffff;
+
+  --muted: #f1f2f4;
+  --muted-foreground: #475467;
+
+  --accent: #e9f7f0;
+  --accent-foreground: #002050;
+
+  --destructive: #d1372c;
+  --border: #e4e7eb;
+  --input: #e4e7eb;
+  --ring: #10945f;
+
+  --radius: 0.75rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b1220;
+  --sidebar-primary: #002050;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e9f7f0;
+  --sidebar-accent-foreground: #002050;
+  --sidebar-border: #e4e7eb;
+  --sidebar-ring: #10945f;
+}
+
+.dark {
+  --background: #000b1f;
+  --foreground: #f1f2f4;
+
+  --card: #001638;
+  --card-foreground: #f1f2f4;
+  --popover: #001638;
+  --popover-foreground: #f1f2f4;
+
+  --primary: #10945f;
+  --primary-foreground: #000b1f;
+
+  --secondary: #142c58;
+  --secondary-foreground: #f1f2f4;
+
+  --muted: #142c58;
+  --muted-foreground: #98a2b3;
+
+  --accent: #00432c;
+  --accent-foreground: #cfeedf;
+
+  --destructive: #e05a4f;
+  --border: color-mix(in oklab, white 12%, transparent);
+  --input: color-mix(in oklab, white 15%, transparent);
+  --ring: #34ae7c;
+
+  --sidebar: #001638;
+  --sidebar-foreground: #f1f2f4;
+  --sidebar-primary: #10945f;
+  --sidebar-primary-foreground: #000b1f;
+  --sidebar-accent: #142c58;
+  --sidebar-accent-foreground: #f1f2f4;
+  --sidebar-border: color-mix(in oklab, white 12%, transparent);
+  --sidebar-ring: #34ae7c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
+  }
+  ::selection {
+    @apply bg-brand-emerald-200 text-brand-navy-900;
+  }
+}
+
+@layer utilities {
+  .container-premium {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10 lg:px-12;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-grid-navy {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
