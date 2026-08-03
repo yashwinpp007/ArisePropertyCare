@@ -22,8 +22,8 @@ export const suburbs: Suburb[] = [
     postcode: "2000",
     region: "Greater Sydney",
     intro:
-      "Based in Seven Hills, Arise Property Care is Sydney's dedicated cleaning partner, servicing homes, offices, strata buildings and construction sites across Greater Sydney — from the Western Sydney growth corridor through to the Hills District.",
-    landmarks: ["Sydney CBD", "Greater Western Sydney", "The Hills District", "Parramatta"],
+      "Based in Seven Hills, Arise Property Care is Sydney's dedicated cleaning partner, servicing homes, offices, strata buildings and construction sites right across the Sydney metro — from the CBD and Inner West to the Northern Beaches, Sutherland Shire and every growth corridor in between.",
+    landmarks: ["Sydney CBD", "Inner West", "Eastern Suburbs", "North Shore", "Northern Beaches", "Western Sydney", "The Hills District", "Sutherland Shire"],
     nearbySlugs: ["seven-hills", "parramatta", "blacktown", "castle-hill"],
     isHub: true,
   },

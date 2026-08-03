@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
 import { suburbs } from "@/lib/data/locations";
+import { sydneyRegions } from "@/lib/data/regions";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/shared/reveal";
 import { Button } from "@/components/ui/button";
@@ -24,8 +25,8 @@ export function ServiceAreas() {
       <div className="container-premium">
         <SectionHeading
           eyebrow="Service Areas"
-          title="Proudly servicing Greater Sydney"
-          subtitle="Based in Seven Hills and covering Western Sydney and the Hills District — find your suburb below."
+          title="Proudly servicing the entire Sydney metro"
+          subtitle="Based in Seven Hills, our teams service homes and businesses right across Greater Sydney — find your suburb below."
           onDark
         />
 
@@ -100,6 +101,30 @@ export function ServiceAreas() {
               </span>
             </div>
           </div>
+        </div>
+
+        <div className="mt-20 border-t border-white/10 pt-14">
+          <Reveal>
+            <h3 className="text-center font-heading text-xl font-bold text-white sm:text-2xl">
+              We service the entire Sydney metro
+            </h3>
+            <p className="mx-auto mt-2 max-w-xl text-center text-sm text-white/60">
+              From the CBD to the coast — our teams cover every corner of Greater Sydney.
+            </p>
+          </Reveal>
+          <StaggerGroup className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            {sydneyRegions.map((region) => (
+              <StaggerItem key={region.name}>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-emerald-400" />
+                  <span className="text-sm">
+                    <span className="font-medium text-white">{region.name}</span>
+                    <span className="text-white/45"> — {region.examples}</span>
+                  </span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
         </div>
       </div>
     </section>

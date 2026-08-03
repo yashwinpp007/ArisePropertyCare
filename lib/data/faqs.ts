@@ -73,6 +73,6 @@ export const homepageFaqs: Faq[] = [
   {
     question: "What areas of Sydney do you service?",
     answer:
-      "We service Greater Sydney with a strong focus on Western Sydney and the Hills District, including Parramatta, Blacktown, Castle Hill, Norwest, Merrylands and surrounding suburbs. See our full list of service areas for details.",
+      "We service the entire Sydney metro, from the CBD and Inner West through to Western Sydney, the Hills District, the Northern Beaches, Sutherland Shire and everywhere between — including Parramatta, Blacktown, Castle Hill, Norwest, Merrylands and surrounding suburbs. See our full list of service areas for details.",
   },
 ];

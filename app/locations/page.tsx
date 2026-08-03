@@ -22,8 +22,8 @@ export default function LocationsIndexPage() {
               Where we clean across Sydney
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-brand-grey-600">
-              Based in Seven Hills, our teams cover Greater Western Sydney and the Hills
-              District — find your suburb below for local service details.
+              Based in Seven Hills, our teams service the entire Sydney metro — find your
+              suburb below for local service details.
             </p>
           </div>
         </div>

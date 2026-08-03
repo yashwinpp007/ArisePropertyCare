@@ -69,9 +69,9 @@ export default function AboutPage() {
                 based right here in Seven Hills and servicing Greater Sydney.
               </p>
               <p className="mt-4 leading-relaxed text-brand-grey-600">
-                Today we clean homes, offices, strata buildings and construction sites across
-                Western Sydney and the Hills District — with the same attention to detail on job
-                one as job one thousand.
+                Today we clean homes, offices, strata buildings and construction sites right
+                across the Sydney metro — with the same attention to detail on job one as job
+                one thousand.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button

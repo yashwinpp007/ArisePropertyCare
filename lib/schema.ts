@@ -3,6 +3,7 @@ import type { Service } from "@/lib/data/services";
 import type { Faq } from "@/lib/data/faqs";
 import { testimonials } from "@/lib/data/testimonials";
 import { suburbs } from "@/lib/data/locations";
+import { sydneyRegions } from "@/lib/data/regions";
 
 export function organizationSchema() {
   return {
@@ -55,8 +56,7 @@ export function localBusinessSchema() {
     },
     areaServed: [
       { "@type": "City", name: "Sydney" },
-      { "@type": "AdministrativeArea", name: "Greater Western Sydney" },
-      { "@type": "AdministrativeArea", name: "The Hills District" },
+      ...sydneyRegions.map((r) => ({ "@type": "AdministrativeArea" as const, name: r.name })),
       ...suburbs
         .filter((s) => !s.isHub)
         .map((s) => ({ "@type": "Place" as const, name: `${s.name} NSW ${s.postcode}` })),

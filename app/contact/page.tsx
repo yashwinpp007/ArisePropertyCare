@@ -107,8 +107,8 @@ export default function ContactPage() {
                 </p>
                 <p className="mt-1 text-lg font-semibold text-white">{siteConfig.fullAddress}</p>
                 <p className="mt-2 text-sm text-white/60">
-                  Based in Seven Hills, servicing homes and businesses across Greater Western
-                  Sydney and the Hills District.
+                  Based in Seven Hills, servicing homes and businesses right across Greater
+                  Sydney.
                 </p>
                 <Button
                   render={<a href={directionsUrl} target="_blank" rel="noopener noreferrer" />}
