@@ -5,7 +5,6 @@ import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, jsonLdScript } from "@/lib/schema";
 import { QuoteForm } from "@/components/forms/quote-form";
 import { siteConfig } from "@/lib/site-config";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us | Arise Property Care Sydney",
@@ -17,6 +16,10 @@ export const metadata: Metadata = buildMetadata({
 const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   siteConfig.fullAddress
 )}`;
+
+const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
+  siteConfig.fullAddress
+)}&z=15&output=embed`;
 
 export default function ContactPage() {
   return (
@@ -93,29 +96,27 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-2 space-y-6">
-            <div className="relative overflow-hidden rounded-2xl border border-brand-grey-200 bg-brand-navy-950 p-7">
-              <svg className="absolute inset-0 h-full w-full text-white/[0.06]" viewBox="0 0 300 220" fill="none" aria-hidden="true">
-                <circle cx="230" cy="40" r="90" stroke="currentColor" strokeWidth="1" />
-                <circle cx="230" cy="40" r="55" stroke="currentColor" strokeWidth="1" />
-              </svg>
-              <div className="relative">
-                <span className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-brand-emerald-400">
-                  <MapPin className="size-5" />
-                </span>
-                <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-brand-emerald-400">
+            <div className="relative overflow-hidden rounded-2xl border border-brand-grey-200">
+              <iframe
+                src={mapEmbedUrl}
+                className="h-64 w-full border-0 sm:h-72"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Arise Property Care location — ${siteConfig.fullAddress}`}
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy-950/95 via-brand-navy-950/40 to-transparent p-5 pt-14">
+                <p className="text-xs font-semibold uppercase tracking-wide text-brand-emerald-400">
                   Our Base
                 </p>
-                <p className="mt-1 text-lg font-semibold text-white">{siteConfig.fullAddress}</p>
-                <p className="mt-2 text-sm text-white/60">
-                  Based in Seven Hills, servicing homes and businesses right across Greater
-                  Sydney.
-                </p>
-                <Button
-                  render={<a href={directionsUrl} target="_blank" rel="noopener noreferrer" />}
-                  className="mt-5 rounded-full bg-white text-brand-navy-900 hover:bg-white/90"
+                <p className="mt-1 text-sm font-semibold text-white">{siteConfig.fullAddress}</p>
+                <a
+                  href={directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pointer-events-auto mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-brand-emerald-300 underline underline-offset-2 hover:text-brand-emerald-200"
                 >
-                  Get Directions <Navigation className="size-4" data-icon="inline-end" />
-                </Button>
+                  Get Directions <Navigation className="size-3.5" />
+                </a>
               </div>
             </div>
 
