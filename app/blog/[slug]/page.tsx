@@ -51,7 +51,7 @@ export default async function BlogPostPage({
   const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(articleSchema(post)) }}

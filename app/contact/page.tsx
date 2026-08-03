@@ -20,7 +20,7 @@ const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeU
 
 export default function ContactPage() {
   return (
-    <div className="bg-white pt-20">
+    <div className="bg-white pt-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

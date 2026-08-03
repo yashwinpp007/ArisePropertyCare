@@ -8,20 +8,35 @@ interface LogoProps {
   className?: string;
   markSize?: number;
   showWordmark?: boolean;
+  size?: "default" | "lg";
 }
 
-export function Logo({ onDark = false, className, markSize = 40, showWordmark = true }: LogoProps) {
+const wordmarkSizes = {
+  default: { title: "text-[1.05rem]", sub: "text-[0.62rem]", gap: "gap-2.5" },
+  lg: { title: "text-2xl sm:text-[1.75rem]", sub: "text-[0.72rem] sm:text-xs", gap: "gap-3" },
+} as const;
+
+export function Logo({
+  onDark = false,
+  className,
+  markSize,
+  showWordmark = true,
+  size = "default",
+}: LogoProps) {
+  const resolvedMarkSize = markSize ?? (size === "lg" ? 64 : 40);
+  const text = wordmarkSizes[size];
+
   return (
     <Link
       href="/"
       aria-label={`${siteConfig.name} — home`}
-      className={cn("group flex items-center gap-2.5", className)}
+      className={cn("group flex items-center", text.gap, className)}
     >
       <Image
         src="/brand/logo-mark.png"
         alt=""
-        width={markSize}
-        height={markSize}
+        width={resolvedMarkSize}
+        height={resolvedMarkSize}
         priority
         className="shrink-0"
       />
@@ -29,7 +44,8 @@ export function Logo({ onDark = false, className, markSize = 40, showWordmark = 
         <span className="flex flex-col leading-none">
           <span
             className={cn(
-              "font-heading text-[1.05rem] font-bold tracking-tight",
+              "font-heading font-bold tracking-tight",
+              text.title,
               onDark ? "text-white" : "text-brand-navy-800"
             )}
           >
@@ -37,7 +53,8 @@ export function Logo({ onDark = false, className, markSize = 40, showWordmark = 
           </span>
           <span
             className={cn(
-              "text-[0.62rem] font-semibold tracking-[0.18em] uppercase",
+              "font-semibold tracking-[0.18em] uppercase",
+              text.sub,
               onDark ? "text-brand-emerald-300" : "text-brand-emerald-600"
             )}
           >

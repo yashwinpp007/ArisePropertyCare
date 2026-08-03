@@ -38,9 +38,9 @@ export function Navbar() {
     >
       <nav
         aria-label="Primary"
-        className="container-premium flex h-20 items-center justify-between"
+        className="container-premium flex h-24 items-center justify-between"
       >
-        <Logo onDark={transparent} />
+        <Logo onDark={transparent} size="lg" />
 
         <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) =>

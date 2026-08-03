@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function TermsPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       <div className="container-premium py-16 sm:py-20">
         <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Terms & Conditions", path: "/terms" }]} />
 

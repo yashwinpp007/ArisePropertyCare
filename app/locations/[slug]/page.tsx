@@ -50,7 +50,7 @@ export default async function LocationPage({
   const faqs = getSuburbFaqs(suburb.name);
 
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       {/* Hero */}
       <section className="bg-brand-navy-950 pb-20 pt-10 sm:pb-24">
         <div className="container-premium">
