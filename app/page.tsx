@@ -25,15 +25,15 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ServiceAreas />
+      <BeforeAfter />
       <SocialProof />
       <ServicesGrid />
       <WhyChooseUs />
       <ProcessTimeline />
       <Industries />
       <FeaturedProjects />
-      <BeforeAfter />
       <Testimonials />
-      <ServiceAreas />
       <FaqSection faqs={homepageFaqs} />
       <CtaSection />
     </>

@@ -12,7 +12,7 @@ const stats = [
 
 export function SocialProof() {
   return (
-    <section className="relative -mt-16 z-10 sm:-mt-20">
+    <section className="relative py-16 sm:py-20">
       <div className="container-premium">
         <Reveal>
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-brand-grey-200 bg-brand-grey-200 shadow-[0_24px_60px_-24px_rgba(0,32,80,0.25)] sm:grid-cols-4">
