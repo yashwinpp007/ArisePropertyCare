@@ -18,8 +18,10 @@ export function ProcessTimeline() {
           <div className="absolute left-0 right-0 top-[38px] hidden h-px bg-brand-grey-200 lg:block" />
           {processSteps.map((step) => (
             <StaggerItem key={step.step} className="relative flex flex-col items-start">
-              <div className="relative z-10 size-[76px] overflow-hidden rounded-2xl border-2 border-white shadow-[0_4px_20px_-4px_rgba(0,32,80,0.25)]">
-                <Image src={step.image} alt="" fill sizes="76px" className="object-cover" />
+              <div className="relative z-10 size-[76px]">
+                <div className="size-full overflow-hidden rounded-2xl border-2 border-white shadow-[0_4px_20px_-4px_rgba(0,32,80,0.25)]">
+                  <Image src={step.image} alt="" fill sizes="76px" className="object-cover" />
+                </div>
                 <span className="absolute -right-2 -top-2 flex size-6 items-center justify-center rounded-full bg-brand-navy-900 text-[0.7rem] font-bold text-white ring-2 ring-white">
                   {step.step}
                 </span>
