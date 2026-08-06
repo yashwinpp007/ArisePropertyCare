@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
+import { FullBleedImage } from "@/components/shared/full-bleed-image";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { CtaSection } from "@/components/sections/cta-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -30,6 +31,13 @@ export default function ServicesIndexPage() {
           </div>
         </div>
       </section>
+
+      <FullBleedImage
+        src="/photos/service-commercial.jpg"
+        alt="Arise Property Care cleaning teams working across Sydney homes and businesses"
+        heightClass="h-[42vh] min-h-[280px] sm:h-[54vh] sm:max-h-[560px]"
+        priority
+      />
 
       <ServicesGrid showHeading={false} />
       <FaqSection faqs={homepageFaqs.slice(0, 6)} />

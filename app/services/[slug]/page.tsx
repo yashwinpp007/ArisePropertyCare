@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CheckCircle2, ArrowRight, Phone, Users } from "lucide-react";
 import { services, getServiceBySlug } from "@/lib/data/services";
@@ -11,6 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { DynamicIcon } from "@/components/shared/dynamic-icon";
+import { FullBleedImage } from "@/components/shared/full-bleed-image";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/shared/reveal";
@@ -58,7 +58,7 @@ export default async function ServicePage({
       />
 
       {/* Hero */}
-      <section className="bg-brand-navy-950 pb-20 pt-10 sm:pb-24">
+      <section className="bg-brand-navy-950 pb-14 pt-10 sm:pb-16">
         <div className="container-premium">
           <Breadcrumbs
             onDark
@@ -69,52 +69,46 @@ export default async function ServicePage({
             ]}
           />
 
-          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:items-start lg:gap-16">
-            <div className="lg:col-span-3">
-              <span className="flex size-14 items-center justify-center rounded-2xl bg-white/10 text-brand-emerald-400">
-                <DynamicIcon name={service.icon} className="size-6" />
-              </span>
-              <h1 className="mt-6 text-balance font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                {service.name} in Sydney
-              </h1>
-              <p className="mt-4 text-lg leading-relaxed text-white/70">{service.heroSubtitle}</p>
+          <div className="mt-8 max-w-3xl">
+            <span className="flex size-14 items-center justify-center rounded-2xl bg-white/10 text-brand-emerald-400">
+              <DynamicIcon name={service.icon} className="size-6" />
+            </span>
+            <h1 className="mt-6 text-balance font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              {service.name} in Sydney
+            </h1>
+            <p className="mt-4 text-lg leading-relaxed text-white/70">{service.heroSubtitle}</p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button
-                  render={<Link href="/quote" />}
-                  size="lg"
-                  className="rounded-full bg-brand-emerald-600 text-white hover:bg-brand-emerald-500"
-                >
-                  Get Free Quote <ArrowRight className="size-4" data-icon="inline-end" />
-                </Button>
-                <Button
-                  render={<a href={siteConfig.phoneHref} />}
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full border-white/25 bg-white/5 text-white hover:bg-white/10 hover:text-white"
-                >
-                  <Phone className="size-4" data-icon="inline-start" /> {siteConfig.phone}
-                </Button>
-              </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button
+                render={<Link href="/quote" />}
+                size="lg"
+                className="rounded-full bg-brand-emerald-600 text-white hover:bg-brand-emerald-500"
+              >
+                Get Free Quote <ArrowRight className="size-4" data-icon="inline-end" />
+              </Button>
+              <Button
+                render={<a href={siteConfig.phoneHref} />}
+                size="lg"
+                variant="outline"
+                className="rounded-full border-white/25 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+              >
+                <Phone className="size-4" data-icon="inline-start" /> {siteConfig.phone}
+              </Button>
             </div>
+          </div>
 
-            <div className="lg:col-span-2 space-y-5">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
-                <Image
-                  src={service.image}
-                  alt={`${service.name} being carried out by an Arise Property Care cleaner`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <QuickAnswerDark>{service.quickAnswer}</QuickAnswerDark>
-              </div>
-            </div>
+          <div className="mt-10 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <QuickAnswerDark>{service.quickAnswer}</QuickAnswerDark>
           </div>
         </div>
       </section>
+
+      <FullBleedImage
+        src={service.image}
+        alt={`${service.name} being carried out by an Arise Property Care cleaner in Sydney`}
+        heightClass="h-[46vh] min-h-[300px] sm:h-[60vh] sm:max-h-[640px]"
+        priority
+      />
 
       {/* Details */}
       <section className="py-20 sm:py-24">
@@ -193,6 +187,12 @@ export default async function ServicePage({
           </div>
         </div>
       </section>
+
+      <FullBleedImage
+        src={service.image}
+        alt={`Arise Property Care's police-checked, fully insured team delivering ${service.name.toLowerCase()} in Sydney`}
+        heightClass="h-[260px] sm:h-[380px]"
+      />
 
       <FaqSection
         faqs={service.faqs}

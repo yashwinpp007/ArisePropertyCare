@@ -25,7 +25,7 @@ export function ServicesGrid({ showHeading = true }: { showHeading?: boolean }) 
                 href={`/services/${service.slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-grey-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-emerald-200 hover:shadow-[0_24px_50px_-20px_rgba(0,32,80,0.18)]"
               >
-                <div className="relative h-36 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <Image
                     src={service.image}
                     alt=""
