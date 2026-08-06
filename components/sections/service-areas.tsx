@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
 import { suburbs } from "@/lib/data/locations";
 import { sydneyRegions } from "@/lib/data/regions";
@@ -21,8 +22,18 @@ function ringPosition(index: number, total: number, radius: number) {
 
 export function ServiceAreas() {
   return (
-    <section className="bg-brand-navy-950 py-24 sm:py-32">
-      <div className="container-premium">
+    <section className="relative overflow-hidden bg-brand-navy-950 py-24 sm:py-32">
+      <div className="absolute inset-0">
+        <Image
+          src="/photos/sydney-skyline.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy-950 via-brand-navy-950/85 to-brand-navy-950" />
+      </div>
+      <div className="container-premium relative">
         <SectionHeading
           eyebrow="Service Areas"
           title="Proudly servicing the entire Sydney metro"

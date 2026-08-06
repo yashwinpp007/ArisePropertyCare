@@ -62,6 +62,7 @@ export interface ProcessStep {
   title: string;
   description: string;
   icon: string;
+  image: string;
 }
 
 export const processSteps: ProcessStep[] = [
@@ -71,6 +72,7 @@ export const processSteps: ProcessStep[] = [
     description:
       "Tell us about your property and the service you need — you'll receive a transparent, no-obligation quote, usually within the same business day.",
     icon: "FileText",
+    image: "/photos/why-pricing.jpg",
   },
   {
     step: 2,
@@ -78,6 +80,7 @@ export const processSteps: ProcessStep[] = [
     description:
       "Choose a date and time that suits you, from a one-off visit to a recurring weekly, fortnightly or monthly plan.",
     icon: "CalendarCheck",
+    image: "/photos/why-scheduling.jpg",
   },
   {
     step: 3,
@@ -85,6 +88,7 @@ export const processSteps: ProcessStep[] = [
     description:
       "A fully insured, police-checked team arrives on time and works through a detailed, service-specific checklist.",
     icon: "Sparkles",
+    image: "/photos/service-residential.jpg",
   },
   {
     step: 4,
@@ -92,6 +96,7 @@ export const processSteps: ProcessStep[] = [
     description:
       "Every job is reviewed against our checklist before we consider it complete, so nothing is left to chance.",
     icon: "ClipboardCheck",
+    image: "/photos/process-inspection.jpg",
   },
   {
     step: 5,
@@ -99,5 +104,6 @@ export const processSteps: ProcessStep[] = [
     description:
       "Step into a spotless home or workplace — and if anything doesn't meet expectations, we'll come back and make it right.",
     icon: "Home",
+    image: "/photos/project-end-of-lease.jpg",
   },
 ];

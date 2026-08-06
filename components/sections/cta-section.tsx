@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,15 @@ import { siteConfig } from "@/lib/site-config";
 export function CtaSection() {
   return (
     <section className="relative overflow-hidden bg-brand-navy-950 py-24 sm:py-28">
+      <Image
+        src="/photos/service-deep-clean.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-20"
+      />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_120%,rgba(0,112,72,0.35),transparent)]" />
+      <div className="absolute inset-0 bg-brand-navy-950/60" />
       <div className="absolute inset-0 bg-grid-navy opacity-30" />
 
       <div className="container-premium relative">
