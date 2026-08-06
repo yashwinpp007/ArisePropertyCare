@@ -189,8 +189,8 @@ export default async function ServicePage({
       </section>
 
       <FullBleedImage
-        src={service.image}
-        alt={`Arise Property Care's police-checked, fully insured team delivering ${service.name.toLowerCase()} in Sydney`}
+        src="/photos/team-members.jpg"
+        alt="The fully insured, police-checked Arise Property Care cleaning team"
         heightClass="h-[260px] sm:h-[380px]"
       />
 

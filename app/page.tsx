@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { FullBleedImage } from "@/components/shared/full-bleed-image";
 import { Hero } from "@/components/sections/hero";
 import { SocialProof } from "@/components/sections/social-proof";
 import { ServicesGrid } from "@/components/sections/services-grid";
@@ -29,6 +30,11 @@ export default function Home() {
       <BeforeAfter />
       <SocialProof />
       <ServicesGrid />
+      <FullBleedImage
+        src="/photos/team-members.jpg"
+        alt="The Arise Property Care team — fully insured, uniformed and police-checked cleaners"
+        heightClass="h-[42vh] min-h-[280px] sm:h-[54vh] sm:max-h-[560px]"
+      />
       <WhyChooseUs />
       <ProcessTimeline />
       <Industries />

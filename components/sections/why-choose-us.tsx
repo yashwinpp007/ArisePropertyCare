@@ -17,7 +17,7 @@ const reasons = [
     icon: Users2,
     title: "Professional Team",
     description: "Trained, uniformed cleaners who take pride in the details.",
-    image: "/photos/service-commercial.jpg",
+    image: "/photos/team-members.jpg",
   },
   {
     icon: Leaf,
