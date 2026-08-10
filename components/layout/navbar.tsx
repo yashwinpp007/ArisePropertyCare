@@ -32,23 +32,21 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex flex-col">
       {/* Utility bar */}
-      <div className="hidden h-10 items-center justify-between bg-brand-navy-950 px-5 text-xs text-white/85 xl:flex 2xl:px-10">
-        <div className="flex items-center gap-6">
-          <a
-            href={siteConfig.phoneHref}
-            className="flex items-center gap-1.5 font-medium transition-colors hover:text-brand-emerald-300"
-          >
-            <Phone className="size-3.5 shrink-0" />
-            Call us on {siteConfig.phone}
-          </a>
-          <a
-            href={siteConfig.emailHref}
-            className="flex items-center gap-1.5 font-medium transition-colors hover:text-brand-emerald-300"
-          >
-            <Mail className="size-3.5 shrink-0" />
-            {siteConfig.email}
-          </a>
-        </div>
+      <div className="hidden h-10 items-center justify-end gap-6 bg-brand-navy-950 px-5 text-xs text-white/85 xl:flex 2xl:px-10">
+        <a
+          href={siteConfig.phoneHref}
+          className="flex items-center gap-1.5 font-medium transition-colors hover:text-brand-emerald-300"
+        >
+          <Phone className="size-3.5 shrink-0" />
+          Call us on {siteConfig.phone}
+        </a>
+        <a
+          href={siteConfig.emailHref}
+          className="flex items-center gap-1.5 font-medium transition-colors hover:text-brand-emerald-300"
+        >
+          <Mail className="size-3.5 shrink-0" />
+          {siteConfig.email}
+        </a>
         <Button
           render={<Link href="/quote" />}
           size="xs"
@@ -166,42 +164,6 @@ export function Navbar() {
               </Link>
             );
           })}
-        </div>
-
-        <div className="hidden xl:flex shrink-0 items-center gap-2 2xl:gap-3">
-          <a
-            href={siteConfig.phoneHref}
-            aria-label={`Call ${siteConfig.phone}`}
-            title={siteConfig.phone}
-            className={cn(
-              "hidden 2xl:flex items-center gap-1.5 whitespace-nowrap text-[0.85rem] font-semibold transition-colors",
-              transparent ? "text-white" : "text-brand-navy-800"
-            )}
-          >
-            <Phone className="size-4 shrink-0" />
-            {siteConfig.phone}
-          </a>
-          <a
-            href={siteConfig.phoneHref}
-            aria-label={`Call ${siteConfig.phone}`}
-            title={siteConfig.phone}
-            className={cn(
-              "flex 2xl:hidden size-9 shrink-0 items-center justify-center rounded-full border transition-colors",
-              transparent
-                ? "border-white/25 text-white hover:bg-white/10"
-                : "border-brand-grey-200 text-brand-navy-800 hover:bg-brand-grey-50"
-            )}
-          >
-            <Phone className="size-4" />
-          </a>
-          <Button
-            render={<Link href="/quote" />}
-            size="sm"
-            variant="default"
-            className="whitespace-nowrap rounded-full bg-brand-emerald-600 px-4 text-white hover:bg-brand-emerald-700"
-          >
-            Get Free Quote
-          </Button>
         </div>
 
           <MobileMenu transparent={transparent} />
