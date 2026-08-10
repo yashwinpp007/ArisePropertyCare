@@ -26,6 +26,7 @@
 
 # raw/unoptimized source photo uploads (optimized copies live in public/photos)
 /APC Website Pictures/
+apclogo2.png
 
 # debug
 npm-debug.log*
