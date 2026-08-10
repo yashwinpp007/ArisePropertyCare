@@ -9,6 +9,8 @@ interface LogoProps {
   markSize?: number;
   showWordmark?: boolean;
   size?: "default" | "lg";
+  /** Adds the animated diagonal accent shape behind the mark — reserved for the main navbar. */
+  accent?: boolean;
 }
 
 const wordmarkSizes = {
@@ -22,6 +24,7 @@ export function Logo({
   markSize,
   showWordmark = true,
   size = "default",
+  accent = false,
 }: LogoProps) {
   const resolvedMarkSize = markSize ?? (size === "lg" ? 64 : 40);
   const text = wordmarkSizes[size];
@@ -32,14 +35,25 @@ export function Logo({
       aria-label={`${siteConfig.name} — home`}
       className={cn("group flex items-center", text.gap, className)}
     >
-      <Image
-        src="/brand/logo-mark.png"
-        alt=""
-        width={resolvedMarkSize}
-        height={resolvedMarkSize}
-        priority
-        className="shrink-0"
-      />
+      <span
+        className="relative shrink-0"
+        style={{ width: resolvedMarkSize, height: resolvedMarkSize }}
+      >
+        {accent && (
+          <span
+            aria-hidden="true"
+            className="animate-logo-accent absolute -right-2 top-1/2 -z-10 h-[130%] w-1/2 rounded-sm bg-gradient-to-br from-brand-emerald-400 to-brand-emerald-600"
+          />
+        )}
+        <Image
+          src="/brand/logo-mark.png"
+          alt=""
+          width={resolvedMarkSize}
+          height={resolvedMarkSize}
+          priority
+          className="relative shrink-0 transition-transform duration-300 ease-out group-hover:-rotate-2 group-hover:scale-105"
+        />
+      </span>
       {showWordmark && (
         <span className="flex flex-col leading-none">
           <span

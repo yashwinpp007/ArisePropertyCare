@@ -42,7 +42,7 @@ export function Navbar() {
         aria-label="Primary"
         className="mx-auto flex h-24 w-full max-w-[1440px] items-center justify-between px-5 md:px-6 2xl:px-10"
       >
-        <Logo onDark={transparent} size="lg" />
+        <Logo onDark={transparent} size="lg" accent />
 
         <div className="hidden xl:flex items-center">
           {navLinks.map((link) => {
