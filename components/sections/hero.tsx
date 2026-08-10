@@ -16,10 +16,8 @@ const trustItems = [
 ];
 
 const slides = [
-  { src: "/photos/service-residential.jpg", alt: "Arise Property Care cleaner working in a Sydney home" },
-  { src: "/photos/team-members.jpg", alt: "The Arise Property Care cleaning team" },
-  { src: "/photos/service-commercial.jpg", alt: "Arise Property Care commercial cleaning in Sydney" },
-  { src: "/photos/service-office.jpg", alt: "Arise Property Care office cleaning in Sydney" },
+  { src: "/photos/hero-team-1.jpg", alt: "The Arise Property Care team with their cleaning cart in a Sydney building lobby" },
+  { src: "/photos/hero-team-2.jpg", alt: "The Arise Property Care team standing beneath their logo in a Sydney building" },
 ];
 
 const SLIDE_INTERVAL_MS = 6000;
