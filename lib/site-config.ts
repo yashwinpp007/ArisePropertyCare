@@ -6,10 +6,10 @@ export const siteConfig = {
   description:
     "Arise Property Care delivers premium residential, commercial and end of lease cleaning across Sydney. Fully insured, police-checked cleaners, satisfaction guaranteed.",
   url: "https://www.arisepropertycare.com.au",
-  email: "info@arisepropertycare.com.au",
+  email: "info@ariseproperty.com.au",
   phone: "0469 864 885",
   phoneHref: "tel:+61469864885",
-  emailHref: "mailto:info@arisepropertycare.com.au",
+  emailHref: "mailto:info@ariseproperty.com.au",
   abnPlaceholder: "Available on request",
   foundedYear: 2016,
   yearsExperience: 9,
@@ -53,12 +53,32 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Locations", href: "/locations" },
+  { label: "Commercial Cleaning", href: "/services", megaMenu: "commercial" },
+  { label: "Industrial Cleaning", href: "/services/builders-cleaning" },
+  { label: "NDIS Services", href: "/services/ndis-cleaning" },
+  { label: "Domestic Cleaning", href: "/services", megaMenu: "domestic" },
+  { label: "Service area", href: "/locations" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ] as const;
+
+/** Slugs (from lib/data/services.ts) shown under each navbar mega-menu category. */
+export const navMegaMenus = {
+  commercial: [
+    "commercial-cleaning",
+    "office-cleaning",
+    "strata-cleaning",
+    "airbnb-cleaning",
+    "medical-centre-cleaning",
+  ],
+  domestic: [
+    "residential-cleaning",
+    "deep-cleaning",
+    "carpet-cleaning",
+    "window-cleaning",
+    "end-of-lease-cleaning",
+  ],
+} as const;
 
 export const legalLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
