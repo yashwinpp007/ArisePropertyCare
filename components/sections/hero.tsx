@@ -36,8 +36,8 @@ export function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden bg-brand-navy-950 pt-24 xl:pt-[8.5rem]">
-      {/* Ambient background — rotating photo slideshow */}
-      <div className="absolute inset-0 -z-10">
+      {/* Desktop ambient background — full-bleed photo behind the content */}
+      <div className="absolute inset-0 -z-10 hidden lg:block">
         {slides.map((slide, i) => (
           <motion.div
             key={slide.src}
@@ -72,6 +72,47 @@ export function Hero() {
           <path d="M100 44 L164 160 L36 160 Z" stroke="currentColor" strokeWidth="1.5" />
         </svg>
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-navy-950 to-transparent" />
+      </div>
+
+      {/* Mobile/tablet — clearly visible photo band up top, text below on solid navy */}
+      <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:hidden">
+        {slides.map((slide, i) => (
+          <motion.div
+            key={slide.src}
+            className="absolute inset-0"
+            initial={false}
+            animate={{ opacity: active === i ? 1 : 0 }}
+            transition={{ duration: 1.4, ease: "easeInOut" }}
+            aria-hidden={active !== i}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="object-cover object-[50%_15%]"
+            />
+          </motion.div>
+        ))}
+        <div className="absolute inset-0 bg-brand-navy-950/20" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-brand-navy-950 to-transparent" />
+
+        {/* Mobile slideshow dots */}
+        <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.src}
+              type="button"
+              aria-label={`Show slide ${i + 1} of ${slides.length}`}
+              aria-current={active === i}
+              onClick={() => setActive(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                active === i ? "w-8 bg-brand-emerald-400" : "w-1.5 bg-white/40 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="container-premium relative grid grid-cols-1 gap-12 pb-16 pt-10 lg:grid-cols-2 lg:items-center lg:gap-14 lg:pb-20 lg:pt-14">
@@ -187,8 +228,8 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Slideshow indicator dots */}
-      <div className="absolute bottom-6 left-6 z-10 flex gap-2 sm:bottom-8 sm:left-10">
+      {/* Slideshow indicator dots — desktop only (mobile has its own in the photo band) */}
+      <div className="absolute bottom-6 left-6 z-10 hidden gap-2 sm:bottom-8 sm:left-10 lg:flex">
         {slides.map((slide, i) => (
           <button
             key={slide.src}

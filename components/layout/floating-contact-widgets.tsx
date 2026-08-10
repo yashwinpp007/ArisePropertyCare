@@ -8,8 +8,9 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 )}`;
 
 /**
- * Desktop-only floating contact buttons — WhatsApp (left) and Call (right).
- * Hidden on mobile, where the sticky bottom bar already covers Call + Quote.
+ * Floating contact buttons — WhatsApp (left) and Call (right), on every
+ * breakpoint. On mobile they sit above the sticky Call/Quote bar; on
+ * desktop (lg+, where the sticky bar is hidden) they drop to the corner.
  */
 export function FloatingContactWidgets() {
   return (
@@ -19,18 +20,18 @@ export function FloatingContactWidgets() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat with ${siteConfig.name} on WhatsApp`}
-        className="fixed bottom-6 left-6 z-40 hidden size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_-8px_rgba(37,211,102,0.6)] transition-transform duration-200 hover:scale-105 lg:flex"
+        className="fixed bottom-24 left-4 z-40 flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_-8px_rgba(37,211,102,0.6)] transition-transform duration-200 hover:scale-105 sm:left-6 sm:size-14 lg:bottom-6"
       >
-        <WhatsAppIcon className="size-7" />
+        <WhatsAppIcon className="size-6 sm:size-7" />
       </a>
 
       <a
         href={siteConfig.phoneHref}
         aria-label={`Call ${siteConfig.name} on ${siteConfig.phone}`}
-        className="fixed bottom-6 right-6 z-40 hidden size-14 items-center justify-center rounded-full bg-brand-navy-900 text-white shadow-[0_12px_30px_-8px_rgba(0,32,80,0.55)] transition-transform duration-200 hover:scale-105 lg:flex"
+        className="fixed bottom-24 right-4 z-40 flex size-12 items-center justify-center rounded-full bg-brand-navy-900 text-white shadow-[0_12px_30px_-8px_rgba(0,32,80,0.55)] transition-transform duration-200 hover:scale-105 sm:right-6 sm:size-14 lg:bottom-6"
       >
         <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-brand-navy-900/40" />
-        <Phone className="size-6" />
+        <Phone className="size-5 sm:size-6" />
       </a>
     </>
   );
