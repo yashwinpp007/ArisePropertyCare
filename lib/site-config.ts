@@ -11,8 +11,8 @@ export const siteConfig = {
   phoneHref: "tel:+61469864885",
   emailHref: "mailto:info@ariseproperty.com.au",
   abnPlaceholder: "Available on request",
-  foundedYear: 2016,
-  yearsExperience: 9,
+  foundedYear: 2010,
+  yearsExperience: 15,
   primaryRegion: "Sydney",
   state: "NSW",
   country: "Australia",
@@ -39,9 +39,10 @@ export const siteConfig = {
   stats: {
     googleRating: 4.9,
     googleReviewCount: 187,
-    yearsExperience: 9,
+    yearsExperience: 15,
     jobsCompleted: 12000,
     satisfactionRate: 100,
+    publicLiabilityMillions: 20,
   },
   trustBadges: [
     "Fully Insured",
@@ -53,6 +54,7 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   { label: "Commercial Cleaning", href: "/services", megaMenu: "commercial" },
   { label: "Industrial Cleaning", href: "/services/builders-cleaning" },
   { label: "NDIS Services", href: "/services/ndis-cleaning" },

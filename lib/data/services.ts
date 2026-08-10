@@ -525,10 +525,6 @@ export const services: Service[] = [
     features: [
       "Household cleaning aligned to Core Supports",
       "Consistent, familiar cleaner where possible",
-      "Flexible scheduling around participant routine",
-      "Coordination with support coordinators and plan managers",
-      "Police-checked, experienced support staff",
-      "Invoicing compatible with plan-managed and self-managed funding",
     ],
     idealFor: [
       "NDIS participants and their families",
@@ -550,7 +546,7 @@ export const services: Service[] = [
     ],
     metaTitle: "NDIS Cleaning Services Sydney | Arise Property Care",
     metaDescription:
-      "NDIS household cleaning support across Sydney. Police-checked cleaners, flexible scheduling and plan-managed invoicing. Get in touch to discuss your plan.",
+      "NDIS household cleaning support across Sydney, delivered by police-checked cleaners experienced in working respectfully in participants' homes. Get in touch to discuss your plan.",
     relatedSlugs: ["residential-cleaning", "deep-cleaning", "medical-centre-cleaning"],
   },
   {
