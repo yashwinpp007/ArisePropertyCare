@@ -53,7 +53,7 @@ const stats = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-24">
+    <div className="pt-24 xl:pt-[8.5rem]">
       <section className="bg-white py-16 sm:py-20">
         <div className="container-premium">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />

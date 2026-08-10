@@ -19,7 +19,7 @@ const highlights = [
 
 export default function QuotePage() {
   return (
-    <div className="bg-brand-grey-50 pt-24">
+    <div className="bg-brand-grey-50 pt-24 xl:pt-[8.5rem]">
       <div className="container-premium py-16 sm:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-2">

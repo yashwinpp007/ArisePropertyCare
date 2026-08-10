@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, ChevronDown, ArrowRight } from "lucide-react";
+import { Phone, Mail, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/logo";
@@ -30,19 +30,48 @@ export function Navbar() {
   const transparent = isHome && !scrolled;
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        transparent
-          ? "bg-transparent"
-          : "bg-white/90 backdrop-blur-md border-b border-brand-grey-200 shadow-[0_1px_0_0_rgba(0,0,0,0.02)]"
-      )}
-    >
-      <nav
-        aria-label="Primary"
-        className="mx-auto flex h-24 w-full max-w-[1440px] items-center justify-between px-5 md:px-6 2xl:px-10"
+    <header className="fixed inset-x-0 top-0 z-50 flex flex-col">
+      {/* Utility bar */}
+      <div className="hidden h-10 items-center justify-between bg-brand-navy-950 px-5 text-xs text-white/85 xl:flex 2xl:px-10">
+        <div className="flex items-center gap-6">
+          <a
+            href={siteConfig.phoneHref}
+            className="flex items-center gap-1.5 font-medium transition-colors hover:text-brand-emerald-300"
+          >
+            <Phone className="size-3.5 shrink-0" />
+            Call us on {siteConfig.phone}
+          </a>
+          <a
+            href={siteConfig.emailHref}
+            className="flex items-center gap-1.5 font-medium transition-colors hover:text-brand-emerald-300"
+          >
+            <Mail className="size-3.5 shrink-0" />
+            {siteConfig.email}
+          </a>
+        </div>
+        <Button
+          render={<Link href="/quote" />}
+          size="xs"
+          className="rounded-full bg-brand-emerald-600 px-4 text-white hover:bg-brand-emerald-500"
+        >
+          Get Free Quote
+        </Button>
+      </div>
+
+      {/* Main nav */}
+      <div
+        className={cn(
+          "transition-all duration-300",
+          transparent
+            ? "bg-transparent"
+            : "bg-white/90 backdrop-blur-md border-b border-brand-grey-200 shadow-[0_1px_0_0_rgba(0,0,0,0.02)]"
+        )}
       >
-        <Logo onDark={transparent} size="lg" pulse />
+        <nav
+          aria-label="Primary"
+          className="mx-auto flex h-24 w-full max-w-[1440px] items-center justify-between px-5 md:px-6 2xl:px-10"
+        >
+          <Logo onDark={transparent} size="lg" pulse />
 
         <div className="hidden xl:flex items-center">
           {navLinks.map((link) => {
@@ -175,8 +204,9 @@ export function Navbar() {
           </Button>
         </div>
 
-        <MobileMenu transparent={transparent} />
-      </nav>
+          <MobileMenu transparent={transparent} />
+        </nav>
+      </div>
     </header>
   );
 }

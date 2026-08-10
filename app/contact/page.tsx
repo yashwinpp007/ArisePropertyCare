@@ -23,7 +23,7 @@ const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
 
 export default function ContactPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-white pt-24 xl:pt-[8.5rem]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

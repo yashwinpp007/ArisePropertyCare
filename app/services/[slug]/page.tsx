@@ -51,7 +51,7 @@ export default async function ServicePage({
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 xl:pt-[8.5rem]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(serviceSchema(service)) }}

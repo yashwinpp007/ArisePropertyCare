@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="pt-24">
+    <div className="pt-24 xl:pt-[8.5rem]">
       <div className="container-premium py-16 sm:py-20">
         <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Privacy Policy", path: "/privacy-policy" }]} />
 

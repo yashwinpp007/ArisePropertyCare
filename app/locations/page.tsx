@@ -13,7 +13,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function LocationsIndexPage() {
   return (
-    <div className="pt-24">
+    <div className="pt-24 xl:pt-[8.5rem]">
       <section className="bg-white py-16 sm:py-20">
         <div className="container-premium">
           <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Locations", path: "/locations" }]} />

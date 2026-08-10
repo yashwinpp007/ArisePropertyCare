@@ -37,7 +37,7 @@ export function Hero() {
   }, [shouldReduceMotion]);
 
   return (
-    <section className="relative isolate overflow-hidden bg-brand-navy-950 pt-24">
+    <section className="relative isolate overflow-hidden bg-brand-navy-950 pt-24 xl:pt-[8.5rem]">
       {/* Ambient background — rotating photo slideshow */}
       <div className="absolute inset-0 -z-10">
         {slides.map((slide, i) => (
