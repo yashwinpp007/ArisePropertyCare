@@ -41,7 +41,7 @@ export default function Home() {
       <FeaturedProjects />
       <Testimonials />
       <FaqSection faqs={homepageFaqs} />
-      <CtaSection />
+      <CtaSection showMap />
     </>
   );
 }

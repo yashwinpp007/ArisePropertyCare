@@ -168,23 +168,23 @@ export function Hero() {
         {/* Right — embedded quote form */}
         <motion.div
           id="hero-quote-form"
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="scroll-mt-28 rounded-2xl bg-white p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] ring-1 ring-black/5 sm:p-8"
+          initial={shouldReduceMotion ? undefined : { opacity: 0, x: 90 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="scroll-mt-28 rounded-2xl bg-white p-5 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] ring-1 ring-black/5 sm:p-6"
         >
           <p className="text-xs font-semibold uppercase tracking-wider text-brand-emerald-600">
             Free &amp; No-Obligation
           </p>
-          <h2 className="mt-1.5 font-heading text-2xl font-bold text-brand-navy-900">
+          <h2 className="mt-1 font-heading text-xl font-bold text-brand-navy-900">
             Get Your Free Quote
           </h2>
-          <p className="mt-1.5 text-sm text-brand-grey-500">
+          <p className="mt-1 text-sm text-brand-grey-500">
             Tell us a little about your property — most quotes are sent back the same business
             day.
           </p>
-          <div className="mt-6">
-            <QuoteForm />
+          <div className="mt-4">
+            <QuoteForm compact />
           </div>
         </motion.div>
       </div>

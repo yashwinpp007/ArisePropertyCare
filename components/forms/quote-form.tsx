@@ -23,9 +23,11 @@ const bathroomOptions = ["1", "2", "3", "4+"];
 
 interface QuoteFormProps {
   defaultService?: string;
+  /** Condensed layout for tight spaces (e.g. embedded in the hero) — smaller controls, no message field. */
+  compact?: boolean;
 }
 
-export function QuoteForm({ defaultService }: QuoteFormProps) {
+export function QuoteForm({ defaultService, compact = false }: QuoteFormProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -106,32 +108,40 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
     );
   }
 
+  const fieldGap = compact ? "gap-3" : "gap-5";
+  const formSpace = compact ? "space-y-3" : "space-y-5";
+  const controlHeight = compact ? "h-9" : "h-11";
+  const labelClass = compact
+    ? "mb-1 block text-xs font-medium text-brand-navy-800"
+    : "mb-1.5 block text-sm font-medium text-brand-navy-800";
+  const errorClass = compact ? "mt-1 text-[0.7rem] text-destructive" : "mt-1.5 text-xs text-destructive";
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className={formSpace}>
       {/* Honeypot field — hidden from real users, catches basic bots */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="company">Company</label>
         <input id="company" type="text" tabIndex={-1} autoComplete="off" {...register("company")} />
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className={`grid grid-cols-1 ${fieldGap} sm:grid-cols-2`}>
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="name" className={labelClass}>
             Full Name <span className="text-brand-emerald-600">*</span>
           </label>
           <Input
             id="name"
             autoComplete="name"
             placeholder="Jane Smith"
-            className="h-11 rounded-lg"
+            className={`${controlHeight} rounded-lg`}
             aria-invalid={!!errors.name}
             {...register("name")}
           />
-          {errors.name && <p className="mt-1.5 text-xs text-destructive">{errors.name.message}</p>}
+          {errors.name && <p className={errorClass}>{errors.name.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="email" className={labelClass}>
             Email <span className="text-brand-emerald-600">*</span>
           </label>
           <Input
@@ -139,17 +149,17 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
             type="email"
             autoComplete="email"
             placeholder="jane@example.com"
-            className="h-11 rounded-lg"
+            className={`${controlHeight} rounded-lg`}
             aria-invalid={!!errors.email}
             {...register("email")}
           />
-          {errors.email && <p className="mt-1.5 text-xs text-destructive">{errors.email.message}</p>}
+          {errors.email && <p className={errorClass}>{errors.email.message}</p>}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className={`grid grid-cols-1 ${fieldGap} sm:grid-cols-2`}>
         <div>
-          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="phone" className={labelClass}>
             Phone <span className="text-brand-emerald-600">*</span>
           </label>
           <Input
@@ -157,15 +167,15 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
             type="tel"
             autoComplete="tel"
             placeholder="04XX XXX XXX"
-            className="h-11 rounded-lg"
+            className={`${controlHeight} rounded-lg`}
             aria-invalid={!!errors.phone}
             {...register("phone")}
           />
-          {errors.phone && <p className="mt-1.5 text-xs text-destructive">{errors.phone.message}</p>}
+          {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="service" className={labelClass}>
             Service Required <span className="text-brand-emerald-600">*</span>
           </label>
           <Controller
@@ -173,7 +183,11 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
             name="service"
             render={({ field }) => (
               <Select value={field.value} onValueChange={field.onChange}>
-                <SelectTrigger id="service" className="h-11 w-full rounded-lg" aria-invalid={!!errors.service}>
+                <SelectTrigger
+                  id="service"
+                  className={`${controlHeight} w-full rounded-lg`}
+                  aria-invalid={!!errors.service}
+                >
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -186,13 +200,13 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
               </Select>
             )}
           />
-          {errors.service && <p className="mt-1.5 text-xs text-destructive">{errors.service.message}</p>}
+          {errors.service && <p className={errorClass}>{errors.service.message}</p>}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+      <div className={`grid grid-cols-1 ${fieldGap} sm:grid-cols-3`}>
         <div>
-          <label htmlFor="propertyType" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="propertyType" className={labelClass}>
             Property Type <span className="text-brand-emerald-600">*</span>
           </label>
           <Controller
@@ -200,7 +214,11 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
             name="propertyType"
             render={({ field }) => (
               <Select value={field.value} onValueChange={field.onChange}>
-                <SelectTrigger id="propertyType" className="h-11 w-full rounded-lg" aria-invalid={!!errors.propertyType}>
+                <SelectTrigger
+                  id="propertyType"
+                  className={`${controlHeight} w-full rounded-lg`}
+                  aria-invalid={!!errors.propertyType}
+                >
                   <SelectValue placeholder="Select type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -213,13 +231,11 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
               </Select>
             )}
           />
-          {errors.propertyType && (
-            <p className="mt-1.5 text-xs text-destructive">{errors.propertyType.message}</p>
-          )}
+          {errors.propertyType && <p className={errorClass}>{errors.propertyType.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="bedrooms" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="bedrooms" className={labelClass}>
             Bedrooms
           </label>
           <Controller
@@ -227,7 +243,7 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
             name="bedrooms"
             render={({ field }) => (
               <Select value={field.value} onValueChange={field.onChange}>
-                <SelectTrigger id="bedrooms" className="h-11 w-full rounded-lg">
+                <SelectTrigger id="bedrooms" className={`${controlHeight} w-full rounded-lg`}>
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
@@ -243,7 +259,7 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
         </div>
 
         <div>
-          <label htmlFor="bathrooms" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+          <label htmlFor="bathrooms" className={labelClass}>
             Bathrooms
           </label>
           <Controller
@@ -251,7 +267,7 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
             name="bathrooms"
             render={({ field }) => (
               <Select value={field.value} onValueChange={field.onChange}>
-                <SelectTrigger id="bathrooms" className="h-11 w-full rounded-lg">
+                <SelectTrigger id="bathrooms" className={`${controlHeight} w-full rounded-lg`}>
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
@@ -268,30 +284,32 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
       </div>
 
       <div>
-        <label htmlFor="preferredDate" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
+        <label htmlFor="preferredDate" className={labelClass}>
           Preferred Date
         </label>
         <Input
           id="preferredDate"
           type="date"
-          className="h-11 rounded-lg"
+          className={`${controlHeight} rounded-lg`}
           min={new Date().toISOString().split("T")[0]}
           {...register("preferredDate")}
         />
       </div>
 
-      <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-brand-navy-800">
-          Message
-        </label>
-        <Textarea
-          id="message"
-          rows={4}
-          placeholder="Tell us anything else that will help us quote accurately — access instructions, specific areas of focus, etc."
-          className="rounded-lg"
-          {...register("message")}
-        />
-      </div>
+      {!compact && (
+        <div>
+          <label htmlFor="message" className={labelClass}>
+            Message
+          </label>
+          <Textarea
+            id="message"
+            rows={4}
+            placeholder="Tell us anything else that will help us quote accurately — access instructions, specific areas of focus, etc."
+            className="rounded-lg"
+            {...register("message")}
+          />
+        </div>
+      )}
 
       <AnimatePresence>
         {status === "error" && errorMessage && (
@@ -309,7 +327,7 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
 
       <Button
         type="submit"
-        size="xl"
+        size={compact ? "lg" : "xl"}
         disabled={status === "submitting"}
         className="w-full rounded-full bg-brand-emerald-600 text-white hover:bg-brand-emerald-700 disabled:opacity-70"
       >
@@ -324,7 +342,7 @@ export function QuoteForm({ defaultService }: QuoteFormProps) {
         )}
       </Button>
 
-      <p className="text-center text-xs text-brand-grey-500">
+      <p className={compact ? "text-center text-[0.7rem] text-brand-grey-500" : "text-center text-xs text-brand-grey-500"}>
         By submitting, you agree to be contacted about your quote request. We never share your
         details with third parties.
       </p>

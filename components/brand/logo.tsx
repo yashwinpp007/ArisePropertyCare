@@ -11,6 +11,8 @@ interface LogoProps {
   size?: "default" | "lg";
   /** Adds the animated diagonal accent shape behind the mark — reserved for the main navbar. */
   accent?: boolean;
+  /** Adds the pulsing scale animation to the whole logo lockup — reserved for the main navbar. */
+  pulse?: boolean;
 }
 
 const wordmarkSizes = {
@@ -25,6 +27,7 @@ export function Logo({
   showWordmark = true,
   size = "default",
   accent = false,
+  pulse = false,
 }: LogoProps) {
   const resolvedMarkSize = markSize ?? (size === "lg" ? 64 : 40);
   const text = wordmarkSizes[size];
@@ -33,7 +36,12 @@ export function Logo({
     <Link
       href="/"
       aria-label={`${siteConfig.name} — home`}
-      className={cn("group flex items-center", text.gap, className)}
+      className={cn(
+        "group relative flex items-center",
+        pulse && "animate-logo-pulse z-[60] hover:[animation-play-state:paused]",
+        text.gap,
+        className
+      )}
     >
       <span
         className="relative shrink-0"
