@@ -6,6 +6,7 @@ import { organizationSchema, websiteSchema, localBusinessSchema, jsonLdScript } 
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { StickyMobileCta } from "@/components/layout/sticky-mobile-cta";
+import { FloatingContactWidgets } from "@/components/layout/floating-contact-widgets";
 import { ExitIntentPopup } from "@/components/shared/exit-intent-popup";
 
 const inter = Inter({
@@ -80,6 +81,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <StickyMobileCta />
+        <FloatingContactWidgets />
         <ExitIntentPopup />
       </body>
     </html>
