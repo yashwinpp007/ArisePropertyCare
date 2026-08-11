@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Clock } from "lucide-react";
 import { blogPosts } from "@/lib/data/blog";
 import { buildMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { StaggerGroup, StaggerItem } from "@/components/shared/reveal";
-import { AbstractPanel } from "@/components/shared/abstract-panel";
 import { CtaSection } from "@/components/sections/cta-section";
 
 export const metadata: Metadata = buildMetadata({
@@ -14,9 +14,6 @@ export const metadata: Metadata = buildMetadata({
     "Practical cleaning advice, end of lease checklists and property care guides from the Arise Property Care team, based in Seven Hills, Sydney.",
   path: "/blog",
 });
-
-const patterns = [1, 2, 3, 4] as const;
-const variants = ["navy", "emerald", "slate"] as const;
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-AU", {
@@ -47,21 +44,25 @@ export default function BlogIndexPage() {
       <section className="bg-brand-grey-50 py-16 sm:py-20">
         <div className="container-premium">
           <StaggerGroup className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post, index) => (
+            {blogPosts.map((post) => (
               <StaggerItem key={post.slug}>
                 <Link
                   href={`/blog/${post.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-grey-200 bg-white transition-all hover:-translate-y-1 hover:border-brand-emerald-200 hover:shadow-xl"
                 >
-                  <AbstractPanel
-                    variant={variants[index % variants.length]}
-                    pattern={patterns[index % patterns.length]}
-                    className="h-40"
-                  >
-                    <span className="relative rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                  <div className="relative h-40 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-950/60 via-transparent to-transparent" />
+                    <span className="absolute bottom-3 left-4 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                       {post.category}
                     </span>
-                  </AbstractPanel>
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-3 text-xs text-brand-grey-500">
                       <span>{formatDate(post.date)}</span>

@@ -161,6 +161,7 @@ export function articleSchema(post: {
   excerpt: string;
   date: string;
   metaDescription: string;
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -169,6 +170,7 @@ export function articleSchema(post: {
     description: post.metaDescription || post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
+    ...(post.image ? { image: `${siteConfig.url}${post.image}` } : {}),
     author: { "@id": `${siteConfig.url}/#organization` },
     publisher: { "@id": `${siteConfig.url}/#organization` },
     mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,

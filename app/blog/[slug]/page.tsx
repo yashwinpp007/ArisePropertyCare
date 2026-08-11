@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Clock, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { blogPosts, getBlogPostBySlug } from "@/lib/data/blog";
 import { buildMetadata } from "@/lib/seo";
 import { articleSchema, jsonLdScript } from "@/lib/schema";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { QuickAnswer } from "@/components/shared/quick-answer";
-import { AbstractPanel } from "@/components/shared/abstract-panel";
 import { Reveal } from "@/components/shared/reveal";
 import { CtaSection } from "@/components/sections/cta-section";
 
@@ -48,8 +48,6 @@ export default async function BlogPostPage({
   const post = getBlogPostBySlug(slug);
   if (!post) notFound();
 
-  const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
-
   return (
     <div className="pt-24 xl:pt-[8.5rem]">
       <script
@@ -84,7 +82,16 @@ export default async function BlogPostPage({
           </div>
         </section>
 
-        <AbstractPanel variant="navy" pattern={2} className="mt-8 h-56 sm:h-72" />
+        <div className="relative mt-8 h-56 w-full overflow-hidden sm:h-72">
+          <Image
+            src={post.image}
+            alt={post.imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
 
         <div className="container-premium py-12 sm:py-16">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
@@ -134,28 +141,30 @@ export default async function BlogPostPage({
             </div>
 
             <aside className="lg:col-span-2">
-              <div className="sticky top-28">
-                <h3 className="font-heading text-lg font-semibold text-brand-navy-900">
-                  More from the blog
-                </h3>
-                <div className="mt-5 space-y-4">
-                  {relatedPosts.map((related) => (
-                    <Link
-                      key={related.slug}
-                      href={`/blog/${related.slug}`}
-                      className="group flex items-start gap-3 rounded-xl border border-brand-grey-200 p-4 hover:border-brand-emerald-200 hover:shadow-sm"
-                    >
-                      <span className="flex-1">
-                        <span className="block text-sm font-semibold leading-snug text-brand-navy-900">
-                          {related.title}
-                        </span>
-                        <span className="mt-1 block text-xs text-brand-grey-500">
-                          {related.readTimeMinutes} min read
-                        </span>
-                      </span>
-                      <ArrowUpRight className="mt-0.5 size-4 shrink-0 text-brand-grey-300 group-hover:text-brand-emerald-600" />
-                    </Link>
-                  ))}
+              <div className="sticky top-28 overflow-hidden rounded-2xl border border-brand-grey-200">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="/photos/team-members.jpg"
+                    alt="The Arise Property Care cleaning team"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading text-lg font-semibold text-brand-navy-900">
+                    Meet the Arise Property Care team
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-grey-600">
+                    Fully insured, police-checked and based right here in Seven Hills — get to
+                    know the team behind every clean.
+                  </p>
+                  <Link
+                    href="/about"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-emerald-600"
+                  >
+                    About us <ArrowRight className="size-3.5" />
+                  </Link>
                 </div>
               </div>
             </aside>
