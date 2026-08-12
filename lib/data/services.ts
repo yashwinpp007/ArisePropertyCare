@@ -24,13 +24,13 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "residential-cleaning",
-    name: "Residential Cleaning",
-    shortName: "Residential",
+    name: "Regular Home Cleaning",
+    shortName: "Regular Home",
     icon: "Home",
     image: "/photos/service-residential.jpg",
-    tagline: "Reliable house cleaning for busy Sydney households.",
+    tagline: "Reliable, recurring house cleaning for busy Sydney households.",
     heroSubtitle:
-      "Recurring and one-off house cleaning across Sydney, tailored to your home and schedule.",
+      "Consistent, recurring house cleaning across Sydney, tailored to your home and schedule so mess never gets the chance to build up.",
     quickAnswer:
       "Arise Property Care provides fully insured residential house cleaning across Sydney from $45 per hour, with weekly, fortnightly, monthly and one-off visits available. Every clean includes kitchens, bathrooms, living areas and bedrooms using eco-friendly, family-safe products.",
     description: [
@@ -73,10 +73,10 @@ export const services: Service[] = [
           "Yes. Weekly, fortnightly and monthly recurring cleans are our most popular option and include a small loyalty discount. You can pause, reschedule or adjust frequency at any time with 24 hours' notice.",
       },
     ],
-    metaTitle: "Residential House Cleaning Sydney | Arise Property Care",
+    metaTitle: "Regular Home Cleaning Sydney | Arise Property Care",
     metaDescription:
-      "Trusted residential house cleaning across Sydney. Weekly, fortnightly or one-off cleans from fully insured, police-checked cleaners. Get a free quote today.",
-    relatedSlugs: ["deep-cleaning", "carpet-cleaning", "window-cleaning"],
+      "Trusted regular home cleaning across Sydney. Weekly, fortnightly or one-off cleans from fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["once-off-cleaning", "deep-cleaning", "carpet-cleaning"],
   },
   {
     slug: "commercial-cleaning",
@@ -233,13 +233,13 @@ export const services: Service[] = [
   },
   {
     slug: "deep-cleaning",
-    name: "Deep Cleaning",
-    shortName: "Deep Clean",
+    name: "Deep Cleaning & Spring Cleaning",
+    shortName: "Deep Clean & Spring",
     icon: "Sparkles",
     image: "/photos/service-deep-clean.jpg",
-    tagline: "Intensive top-to-bottom cleaning for homes and offices.",
+    tagline: "Intensive top-to-bottom cleaning and seasonal spring cleans.",
     heroSubtitle:
-      "A thorough reset for properties that need more than a standard clean — spring cleans, post-renovation and first-time cleans.",
+      "A thorough reset for properties that need more than a standard clean — seasonal spring cleans, post-renovation resets and first-time cleans.",
     quickAnswer:
       "Deep cleaning goes beyond a standard clean to cover areas not touched in routine visits — inside appliances, behind furniture, skirting boards, light fittings and built-up grime in bathrooms and kitchens. It's recommended every 3–6 months or before starting a recurring cleaning plan.",
     description: [
@@ -271,10 +271,15 @@ export const services: Service[] = [
         answer:
           "We recommend a deep clean every 3–6 months, or seasonally, even if you have a regular maintenance clean in place, to keep hidden buildup under control.",
       },
+      {
+        question: "Is spring cleaning different from a deep clean?",
+        answer:
+          "Spring cleaning is essentially a deep clean timed to the season — it uses the same thorough, room-by-room process to remove winter buildup, dust and allergens and leave your home genuinely refreshed, not just tidied.",
+      },
     ],
-    metaTitle: "Deep Cleaning Services Sydney | Arise Property Care",
+    metaTitle: "Deep Cleaning & Spring Cleaning Sydney | Arise Property Care",
     metaDescription:
-      "Intensive deep cleaning for homes and offices across Sydney — appliances, grout, skirting boards and more. Book a thorough reset clean today.",
+      "Intensive deep cleaning and spring cleaning for Sydney homes and offices — appliances, grout, skirting boards and more. Book a thorough reset clean today.",
     relatedSlugs: ["residential-cleaning", "carpet-cleaning", "end-of-lease-cleaning"],
   },
   {
@@ -961,6 +966,190 @@ export const services: Service[] = [
     metaDescription:
       "Considerate, high-standard cleaning for aged care facilities across Sydney. Fully insured, police-checked cleaners. Get a free quote today.",
     relatedSlugs: ["ndis-cleaning", "medical-centre-cleaning", "commercial-cleaning"],
+  },
+  {
+    slug: "moving-in-out-cleaning",
+    name: "Moving In & Out Cleaning",
+    shortName: "Moving In & Out",
+    icon: "Truck",
+    image: "/photos/service-moving-in-out.jpg",
+    tagline: "Detailed cleaning for a fresh start, whichever direction you're moving.",
+    heroSubtitle:
+      "Thorough cleaning for homes changing hands across Sydney — ready for the people moving in, and left spotless by the people moving out.",
+    quickAnswer:
+      "Arise Property Care provides moving in and moving out cleaning across Sydney, covering kitchens, bathrooms, cupboards and every surface so a new home is genuinely ready to live in, or a vacated one is left spotless for its next owner or tenant.",
+    description: [
+      "Moving changes how a home looks. Once the furniture is gone, hidden dust, marks and grime that were hidden behind wardrobes and appliances suddenly become obvious — and a home you're moving into deserves the same attention before your own boxes arrive.",
+      "Whether you're handing a property over or walking into a new one, we work to a documented checklist covering kitchens, bathrooms, cupboards, skirting boards and fixtures, so the property is genuinely ready for its next chapter.",
+    ],
+    features: [
+      "Full kitchen clean, including cabinet interiors",
+      "Bathroom descaling and sanitisation",
+      "Wardrobe, cupboard and drawer interiors",
+      "Skirting boards, light switches and door frames",
+      "Window sills, tracks and interior glass",
+      "Flexible scheduling around settlement and moving dates",
+    ],
+    idealFor: [
+      "Homeowners moving into a new property",
+      "Tenants and owners vacating a property",
+      "Property managers coordinating handovers",
+      "Buyers wanting a fresh start before unpacking",
+    ],
+    faqs: [
+      {
+        question: "What's the difference between this and end of lease cleaning?",
+        answer:
+          "End of lease cleaning is built specifically around real estate exit condition reports for renters. Moving in and out cleaning covers the same thorough standard but suits any property changing hands — including owner-occupied homes being bought, sold or simply moved into.",
+      },
+      {
+        question: "Can you schedule around a tight settlement date?",
+        answer:
+          "Yes, we understand moving dates can shift at short notice, and we do our best to accommodate tight or changing settlement and handover timeframes.",
+      },
+    ],
+    metaTitle: "Moving In & Out Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Thorough moving in and moving out cleaning across Sydney for homes changing hands. Fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["end-of-lease-cleaning", "once-off-cleaning", "deep-cleaning"],
+  },
+  {
+    slug: "once-off-cleaning",
+    name: "Once Off Cleaning",
+    shortName: "Once Off",
+    icon: "Repeat1",
+    image: "/photos/service-once-off.jpg",
+    tagline: "One solid clean, no ongoing commitment required.",
+    heroSubtitle:
+      "A single, thorough clean for Sydney homes that need a reset — no recurring contract required.",
+    quickAnswer:
+      "Arise Property Care provides once-off home cleaning across Sydney covering kitchens, bathrooms and living areas in a single visit, with no ongoing commitment — ideal before guests arrive, after an event, or whenever a home just needs to be brought back under control.",
+    description: [
+      "Not every home needs a cleaner every week. Sometimes you just need one solid clean to get things back under control — before guests arrive, after a busy few months, or simply for a fresh start with no strings attached.",
+      "We treat a once-off clean with the same care as any recurring job, working through a full room-by-room checklist covering kitchens, bathrooms, living areas and the hard-to-reach spots that get missed in the day-to-day.",
+    ],
+    features: [
+      "Kitchen surface and appliance exterior cleaning",
+      "Bathroom cleaning and sanitising",
+      "Vacuuming and mopping of all floors",
+      "Dusting furniture, fixtures and skirting boards",
+      "Interior window and glass cleaning",
+      "No lock-in contract or ongoing commitment",
+    ],
+    idealFor: [
+      "Homes needing a reset with no recurring plan",
+      "Pre-guest or pre-event tidy-ups",
+      "Post-renovation or post-party cleans",
+      "Anyone trying a clean before committing to a schedule",
+    ],
+    faqs: [
+      {
+        question: "Is a once-off clean as thorough as a regular clean?",
+        answer:
+          "Yes, every clean follows the same detailed checklist regardless of whether it's a one-time visit or part of a recurring plan — there's no difference in the standard of work.",
+      },
+      {
+        question: "Can I switch to a recurring schedule later?",
+        answer:
+          "Yes, plenty of clients start with a once-off clean and move to a weekly, fortnightly or monthly plan afterwards — just let us know and we'll set it up.",
+      },
+    ],
+    metaTitle: "Once Off Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Thorough once-off home cleaning across Sydney with no ongoing commitment. Fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["residential-cleaning", "deep-cleaning", "moving-in-out-cleaning"],
+  },
+  {
+    slug: "oven-cleaning",
+    name: "Oven Cleaning",
+    shortName: "Oven",
+    icon: "Flame",
+    image: "/photos/service-oven.jpg",
+    tagline: "Professional oven cleaning that actually shifts baked-on grime.",
+    heroSubtitle:
+      "Detailed oven cleaning across Sydney, removing built-up grease and baked-on residue that a regular kitchen wipe-down can't touch.",
+    quickAnswer:
+      "Arise Property Care provides professional oven cleaning across Sydney, removing baked-on grease and residue from racks, trays, doors and interior surfaces using safe, effective products suited to your oven type.",
+    description: [
+      "An oven is one of the hardest things in a kitchen to clean properly — baked-on grease and residue build up in places a regular wipe-down never reaches. We treat racks, trays, doors and interior surfaces with products and techniques suited to your specific oven type, without damaging its finish.",
+      "Oven cleaning is available as a standalone service or as an add-on to a broader home clean, end of lease clean or deep clean — whichever suits what you need done.",
+    ],
+    features: [
+      "Interior oven cavity degreasing",
+      "Racks and trays soaked and scrubbed",
+      "Oven door glass, inside and out",
+      "Stovetop and rangehood cleaning available",
+      "Safe for a range of oven types and finishes",
+      "Available standalone or as an add-on service",
+    ],
+    idealFor: [
+      "Households with heavy oven buildup",
+      "End of lease and rental handovers",
+      "Landlords and property managers",
+      "Anyone adding oven care to another clean",
+    ],
+    faqs: [
+      {
+        question: "Will oven cleaning damage the surface or coating?",
+        answer:
+          "No, we use products and techniques suited to your oven's specific finish, so grease and residue are removed safely without damaging the surface.",
+      },
+      {
+        question: "Can I book oven cleaning on its own?",
+        answer:
+          "Yes, oven cleaning is available as a standalone service, or bundled with a regular home clean, deep clean or end of lease clean.",
+      },
+    ],
+    metaTitle: "Oven Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Professional oven cleaning across Sydney, removing baked-on grease and residue safely. Available standalone or as an add-on. Get a free quote today.",
+    relatedSlugs: ["deep-cleaning", "residential-cleaning", "end-of-lease-cleaning"],
+  },
+  {
+    slug: "pressure-cleaning",
+    name: "Pressure Cleaning",
+    shortName: "Pressure Clean",
+    icon: "SprayCan",
+    image: "/photos/service-pressure.jpg",
+    tagline: "Restore driveways, paths and exteriors with high-pressure cleaning.",
+    heroSubtitle:
+      "High-pressure cleaning for driveways, paths, decks and building exteriors across Sydney.",
+    quickAnswer:
+      "Arise Property Care provides high-pressure cleaning across Sydney for driveways, paths, decks and building exteriors, removing built-up dirt, mould, mildew and stains to restore the surface's appearance.",
+    description: [
+      "External surfaces take a beating from weather, foot traffic and everyday grime, and a standard hose simply can't shift what builds up over time. Our high-pressure cleaning removes dirt, mould, mildew and stains from driveways, pathways, decks and building exteriors, restoring the surface underneath.",
+      "We assess each surface before starting, choosing the right pressure and technique for the material, so the clean is thorough without causing damage.",
+    ],
+    features: [
+      "Driveway and pathway cleaning",
+      "Deck and outdoor entertaining area cleaning",
+      "Building exterior and wall washdowns",
+      "Mould, mildew and stain removal",
+      "Surface assessment before every job",
+      "Suitable for residential and commercial properties",
+    ],
+    idealFor: [
+      "Homeowners restoring driveways and paths",
+      "Pre-sale or pre-listing presentation",
+      "Landlords and property managers",
+      "Businesses maintaining exterior curb appeal",
+    ],
+    faqs: [
+      {
+        question: "Is pressure cleaning safe for all surfaces?",
+        answer:
+          "We assess your surface first and adjust pressure and technique accordingly, so pavers, concrete, timber decking and rendered walls are all cleaned safely and effectively.",
+      },
+      {
+        question: "How often should driveways and paths be pressure cleaned?",
+        answer:
+          "Most Sydney properties benefit from pressure cleaning once or twice a year, though this varies depending on surface type, shade, and exposure to weather.",
+      },
+    ],
+    metaTitle: "Pressure Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "High-pressure cleaning for driveways, paths, decks and exteriors across Sydney. Removes dirt, mould and stains safely. Get a free quote today.",
+    relatedSlugs: ["deep-cleaning", "residential-cleaning", "strata-cleaning"],
   },
 ];
 

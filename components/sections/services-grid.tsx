@@ -66,7 +66,6 @@ export function ServicesGrid({
       el.removeEventListener("scroll", updateArrows);
       window.removeEventListener("resize", updateArrows);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [carousel]);
 
   const scrollByPage = (direction: "left" | "right") => {

@@ -84,9 +84,13 @@ export const navMegaMenus = {
   domestic: [
     "residential-cleaning",
     "deep-cleaning",
+    "moving-in-out-cleaning",
+    "once-off-cleaning",
+    "end-of-lease-cleaning",
     "carpet-cleaning",
     "window-cleaning",
-    "end-of-lease-cleaning",
+    "oven-cleaning",
+    "pressure-cleaning",
   ],
 } as const;
 
