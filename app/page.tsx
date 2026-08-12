@@ -30,7 +30,7 @@ export default function Home() {
       <ServiceAreas />
       <BeforeAfter />
       <SocialProof />
-      <ServicesGrid />
+      <ServicesGrid carousel />
       <FullBleedImage
         src="/photos/team-members.jpg"
         alt="The Arise Property Care team — fully insured, uniformed and police-checked cleaners"
