@@ -18,6 +18,7 @@ const reasons = [
     title: "Professional Team",
     description: "Trained, uniformed cleaners who take pride in the details.",
     image: "/photos/team-members.jpg",
+    objectPosition: "center 25%",
   },
   {
     icon: Leaf,
@@ -75,7 +76,7 @@ export function WhyChooseUs() {
         />
 
         <StaggerGroup className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {reasons.map(({ icon: Icon, title, description, image }) => (
+          {reasons.map(({ icon: Icon, title, description, image, objectPosition }) => (
             <StaggerItem key={title}>
               <div className="group relative h-64 overflow-hidden rounded-2xl">
                 <Image
@@ -84,6 +85,7 @@ export function WhyChooseUs() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: objectPosition ?? "center" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-950/95 via-brand-navy-950/45 to-brand-navy-950/10" />
                 <div className="absolute inset-x-0 bottom-0 p-5">

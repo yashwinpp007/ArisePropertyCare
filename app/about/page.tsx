@@ -111,6 +111,7 @@ export default function AboutPage() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
+                style={{ objectPosition: "center 20%" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-950/85 via-brand-navy-950/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-center">

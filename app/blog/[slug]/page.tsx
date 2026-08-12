@@ -149,6 +149,7 @@ export default async function BlogPostPage({
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
+                    style={{ objectPosition: "center 20%" }}
                   />
                 </div>
                 <div className="p-6">

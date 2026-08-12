@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/hero";
 import { SocialProof } from "@/components/sections/social-proof";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
+import { QualityGuarantee } from "@/components/sections/quality-guarantee";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { Industries } from "@/components/sections/industries";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
@@ -34,8 +35,10 @@ export default function Home() {
         src="/photos/team-members.jpg"
         alt="The Arise Property Care team — fully insured, uniformed and police-checked cleaners"
         heightClass="h-[42vh] min-h-[280px] sm:h-[54vh] sm:max-h-[560px]"
+        objectPosition="center 22%"
       />
       <WhyChooseUs />
+      <QualityGuarantee />
       <ProcessTimeline />
       <Industries />
       <FeaturedProjects />

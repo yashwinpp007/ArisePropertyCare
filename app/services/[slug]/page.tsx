@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CheckCircle2, ArrowRight, Phone, Users } from "lucide-react";
 import { services, getServiceBySlug } from "@/lib/data/services";
@@ -11,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { DynamicIcon } from "@/components/shared/dynamic-icon";
 import { FullBleedImage } from "@/components/shared/full-bleed-image";
+import { QualityGuarantee } from "@/components/sections/quality-guarantee";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/shared/reveal";
@@ -192,7 +194,10 @@ export default async function ServicePage({
         src="/photos/team-members.jpg"
         alt="The fully insured, police-checked Arise Property Care cleaning team"
         heightClass="h-[260px] sm:h-[380px]"
+        objectPosition="center 22%"
       />
+
+      <QualityGuarantee />
 
       <FaqSection
         faqs={service.faqs}
@@ -212,15 +217,27 @@ export default async function ServicePage({
               <Link
                 key={related.slug}
                 href={`/services/${related.slug}`}
-                className="group rounded-2xl border border-brand-grey-200 p-6 transition-all hover:-translate-y-1 hover:border-brand-emerald-200 hover:shadow-lg"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-brand-grey-200 bg-white transition-all hover:-translate-y-1 hover:border-brand-emerald-200 hover:shadow-lg"
               >
-                <span className="flex size-11 items-center justify-center rounded-xl bg-brand-navy-900/5 text-brand-navy-800 group-hover:bg-brand-emerald-600 group-hover:text-white">
-                  <DynamicIcon name={related.icon} className="size-5" />
-                </span>
-                <h3 className="mt-4 font-heading text-base font-semibold text-brand-navy-900">
-                  {related.name}
-                </h3>
-                <p className="mt-1.5 text-sm text-brand-grey-500">{related.tagline}</p>
+                <div className="relative h-36 overflow-hidden">
+                  <Image
+                    src={related.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-950/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-4 flex size-10 items-center justify-center rounded-xl bg-white/90 text-brand-navy-800 backdrop-blur-sm transition-colors group-hover:bg-brand-emerald-600 group-hover:text-white">
+                    <DynamicIcon name={related.icon} className="size-5" />
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading text-base font-semibold text-brand-navy-900">
+                    {related.name}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-brand-grey-500">{related.tagline}</p>
+                </div>
               </Link>
             ))}
           </div>

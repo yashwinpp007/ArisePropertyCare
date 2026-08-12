@@ -112,7 +112,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "flex items-center gap-0.5 whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8rem] font-medium transition-colors 2xl:text-[0.85rem]",
+                      "flex items-center gap-0.5 whitespace-nowrap rounded-full px-2.5 py-2 text-[0.95rem] font-medium transition-colors 2xl:text-base",
                       transparent
                         ? "text-white/90 hover:text-white"
                         : "text-brand-navy-800 hover:text-brand-emerald-600"
@@ -185,7 +185,7 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8rem] font-medium transition-colors 2xl:text-[0.85rem]",
+                  "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.95rem] font-medium transition-colors 2xl:text-base",
                   transparent
                     ? "text-white/90 hover:text-white"
                     : "text-brand-navy-800 hover:text-brand-emerald-600"
