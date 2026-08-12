@@ -10,10 +10,6 @@ export function getSuburbFaqs(suburbName: string): Faq[] {
       answer: `Yes, Arise Property Care provides residential, commercial and end of lease cleaning throughout ${suburbName} and the surrounding Sydney suburbs. Request a free quote and we'll confirm availability for your address.`,
     },
     {
-      question: `How much does a house clean cost in ${suburbName}?`,
-      answer: `Residential cleaning in ${suburbName} starts from $45 per hour, with most 2–3 bedroom homes taking 2–3 hours per standard visit. Exact pricing depends on property size, condition and how often you book — request a free quote for an accurate figure.`,
-    },
-    {
       question: `How quickly can you book a clean in ${suburbName}?`,
       answer: `Most bookings in ${suburbName} are confirmed within 24–48 hours of your enquiry, and we can often accommodate short-notice end of lease or one-off cleans depending on team availability.`,
     },
@@ -25,11 +21,6 @@ export function getSuburbFaqs(suburbName: string): Faq[] {
 }
 
 export const homepageFaqs: Faq[] = [
-  {
-    question: "How much does house cleaning cost in Sydney?",
-    answer:
-      "Residential cleaning with Arise Property Care starts from $45 per hour, with most 2–3 bedroom homes taking 2–3 hours per standard visit. The exact cost depends on property size, condition and how often you book. We provide a free, no-obligation quote before any work begins.",
-  },
   {
     question: "How long does an end of lease clean take?",
     answer:

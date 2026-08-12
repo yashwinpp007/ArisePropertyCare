@@ -32,7 +32,7 @@ export const services: Service[] = [
     heroSubtitle:
       "Consistent, recurring house cleaning across Sydney, tailored to your home and schedule so mess never gets the chance to build up.",
     quickAnswer:
-      "Arise Property Care provides fully insured residential house cleaning across Sydney from $45 per hour, with weekly, fortnightly, monthly and one-off visits available. Every clean includes kitchens, bathrooms, living areas and bedrooms using eco-friendly, family-safe products.",
+      "Arise Property Care provides fully insured residential house cleaning across Sydney, with weekly, fortnightly, monthly and one-off visits available. Every clean includes kitchens, bathrooms, living areas and bedrooms using eco-friendly, family-safe products.",
     description: [
       "Our residential cleaning service is built around the way real Sydney households actually live — school runs, home offices, pets and weekend guests included. You choose the frequency, we bring a consistent, police-checked cleaning team who get to know your home over time.",
       "Every visit follows a detailed room-by-room checklist covering kitchens, bathrooms, living areas, bedrooms and high-touch surfaces, so nothing gets missed whether it's your first clean or your fiftieth.",
@@ -52,11 +52,6 @@ export const services: Service[] = [
       "Elderly or NDIS-supported households",
     ],
     faqs: [
-      {
-        question: "How much does house cleaning cost in Sydney?",
-        answer:
-          "Standard residential cleaning with Arise Property Care starts from $45 per hour, with most 2–3 bedroom homes taking 2–3 hours per visit. Final pricing depends on property size, condition and frequency — request a free, no-obligation quote for an exact figure.",
-      },
       {
         question: "Do I need to be home during the clean?",
         answer:
