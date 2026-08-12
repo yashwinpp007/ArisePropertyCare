@@ -80,6 +80,7 @@ export function Navbar() {
                 .map((slug) => services.find((s) => s.slug === slug))
                 .filter((s): s is NonNullable<typeof s> => Boolean(s));
               const isOpen = openMenu === megaMenuKey;
+              const isLarge = menuServices.length > 6;
 
               return (
                 <div
@@ -104,14 +105,22 @@ export function Navbar() {
 
                   <div
                     className={cn(
-                      "absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3 transition-all duration-200",
+                      "transition-all duration-200",
+                      isLarge
+                        ? "fixed left-1/2 top-[9.25rem] w-[min(900px,calc(100vw-2rem))] -translate-x-1/2"
+                        : "absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3",
                       isOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
                         : "pointer-events-none -translate-y-1 opacity-0"
                     )}
                   >
                     <div className="rounded-2xl border border-brand-grey-200 bg-white p-5 shadow-2xl shadow-brand-navy-900/10">
-                      <div className="grid grid-cols-2 gap-1">
+                      <div
+                        className={cn(
+                          "grid max-h-[70vh] gap-1 overflow-y-auto",
+                          isLarge ? "grid-cols-3" : "grid-cols-2"
+                        )}
+                      >
                         {menuServices.map((service) => (
                           <Link
                             key={service.slug}

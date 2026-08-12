@@ -131,8 +131,8 @@ export const services: Service[] = [
   },
   {
     slug: "office-cleaning",
-    name: "Office Cleaning",
-    shortName: "Office",
+    name: "Offices & Corporate Buildings Cleaning",
+    shortName: "Offices & Corporate",
     icon: "Briefcase",
     image: "/photos/service-office.jpg",
     tagline: "Daily, weekly or fortnightly office cleaning contracts.",
@@ -175,10 +175,10 @@ export const services: Service[] = [
           "Yes, if you're switching providers we're happy to review your existing scope of works and match or improve on it during onboarding.",
       },
     ],
-    metaTitle: "Office Cleaning Sydney | Arise Property Care",
+    metaTitle: "Offices & Corporate Buildings Cleaning Sydney | Arise Property Care",
     metaDescription:
-      "Professional office cleaning across Sydney with flexible daily, weekly or fortnightly contracts. Fully insured, police-checked cleaners. Free quote available.",
-    relatedSlugs: ["commercial-cleaning", "medical-centre-cleaning", "strata-cleaning"],
+      "Professional office and corporate building cleaning across Sydney with flexible daily, weekly or fortnightly contracts. Fully insured, police-checked cleaners.",
+    relatedSlugs: ["commercial-cleaning", "medical-centre-cleaning", "government-buildings-cleaning"],
   },
   {
     slug: "end-of-lease-cleaning",
@@ -551,8 +551,8 @@ export const services: Service[] = [
   },
   {
     slug: "medical-centre-cleaning",
-    name: "Medical Centre Cleaning",
-    shortName: "Medical",
+    name: "Medical Centres & GP Clinics Cleaning",
+    shortName: "Medical Centres",
     icon: "Stethoscope",
     image: "/photos/service-medical.jpg",
     tagline: "Compliant hygiene standards for medical and allied health sites.",
@@ -575,7 +575,7 @@ export const services: Service[] = [
     idealFor: [
       "Medical centres and GP clinics",
       "Allied health and physiotherapy practices",
-      "Dental practices",
+      "Pathology and specialist clinics",
       "Specialist consulting suites",
     ],
     faqs: [
@@ -590,10 +590,377 @@ export const services: Service[] = [
           "Yes, most medical centre cleaning is scheduled before opening, in the evening after the last appointment, or overnight to avoid any disruption to patients and staff.",
       },
     ],
-    metaTitle: "Medical Centre Cleaning Sydney | Arise Property Care",
+    metaTitle: "Medical Centres & GP Clinics Cleaning Sydney | Arise Property Care",
     metaDescription:
-      "Infection-control-aware medical centre and clinic cleaning across Sydney. Flexible scheduling for GP clinics, allied health and dental practices.",
-    relatedSlugs: ["office-cleaning", "commercial-cleaning", "ndis-cleaning"],
+      "Infection-control-aware medical centre and GP clinic cleaning across Sydney. Flexible scheduling for clinics and allied health practices.",
+    relatedSlugs: ["dental-clinics-cleaning", "office-cleaning", "aged-care-cleaning"],
+  },
+  {
+    slug: "childcare-cleaning",
+    name: "Childcare Cleaning",
+    shortName: "Childcare",
+    icon: "Baby",
+    image: "/photos/service-childcare.jpg",
+    tagline: "Safe, thorough cleaning for childcare centres and early learning services.",
+    heroSubtitle:
+      "Hygiene-focused cleaning for childcare centres and early learning services across Sydney, scheduled around the children in your care.",
+    quickAnswer:
+      "Arise Property Care provides childcare centre cleaning across Sydney covering playrooms, sleep areas, nappy-change stations and bathrooms, scheduled before opening, after close or on weekends so cleaning never interrupts the children's day.",
+    description: [
+      "Childcare centres carry hygiene demands beyond a typical commercial space — from nappy-change areas to shared toys and sleep mats, every surface needs to be genuinely clean, not just tidy. We work to a documented checklist covering high-contact surfaces, washrooms and food preparation areas, using child-safe, non-toxic products throughout.",
+      "Cleaning is scheduled around your centre's operating hours — early morning, after the children go home, or weekends — so it never disrupts learning or nap time.",
+    ],
+    features: [
+      "Playroom and activity area cleaning",
+      "Nappy-change area and bathroom sanitisation",
+      "Sleep room and cot area cleaning",
+      "Kitchen and food preparation area hygiene",
+      "Child-safe, non-toxic cleaning products",
+      "Scheduling around centre operating hours",
+    ],
+    idealFor: [
+      "Long day care and early learning centres",
+      "Family day care premises",
+      "Before and after school care services",
+      "Preschools and kindergartens",
+    ],
+    faqs: [
+      {
+        question: "Are your cleaning products safe for a childcare environment?",
+        answer:
+          "Yes, we use non-toxic, child-safe cleaning products throughout childcare centres, and every cleaner is police-checked before working on-site.",
+      },
+      {
+        question: "Can cleaning be scheduled outside centre hours?",
+        answer:
+          "Yes, most childcare cleaning is scheduled before opening, after the last child leaves, or on weekends so it never disrupts the children's routine.",
+      },
+    ],
+    metaTitle: "Childcare Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Hygiene-focused childcare centre cleaning across Sydney. Child-safe products, police-checked cleaners, flexible scheduling. Get a free quote today.",
+    relatedSlugs: ["commercial-cleaning", "ndis-cleaning", "office-cleaning"],
+  },
+  {
+    slug: "church-cleaning",
+    name: "Church Cleaning",
+    shortName: "Church",
+    icon: "Church",
+    image: "/photos/service-commercial.jpg",
+    tagline: "Respectful, reliable cleaning for churches and places of worship.",
+    heroSubtitle:
+      "Scheduled cleaning for churches, chapels and places of worship across Sydney, built around your services and events.",
+    quickAnswer:
+      "Arise Property Care provides church cleaning across Sydney covering worship spaces, halls, kitchens and bathrooms, scheduled around your service times and community events so the space is presentation-ready without disrupting your congregation.",
+    description: [
+      "Churches and places of worship are more than a single room — most host services, community groups, functions and everyday visitors throughout the week. We clean worship areas, halls, kitchens and shared facilities with the same care and respect the space deserves.",
+      "We work around your service times and events, whether that means a midweek clean, a pre-service tidy, or servicing after a function, so the building is always ready to welcome your community.",
+    ],
+    features: [
+      "Worship area, pews and aisle cleaning",
+      "Community halls and shared rooms",
+      "Kitchen and food service area cleaning",
+      "Bathroom cleaning and consumable restocking",
+      "Window, glass and fixture cleaning",
+      "Scheduling around services and events",
+    ],
+    idealFor: [
+      "Churches and chapels",
+      "Places of worship of all denominations",
+      "Community halls attached to religious sites",
+      "Function and event spaces used for services",
+    ],
+    faqs: [
+      {
+        question: "Can you work around our service times?",
+        answer:
+          "Yes, we schedule around your services and events — including midweek cleans, pre-service preparation, or a clean after a function — so cleaning never gets in the way of your congregation.",
+      },
+      {
+        question: "Do you clean community halls attached to the church as well?",
+        answer:
+          "Yes, we clean any shared spaces on-site, including halls, kitchens and meeting rooms used for community groups and events.",
+      },
+    ],
+    metaTitle: "Church Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Respectful, scheduled cleaning for churches and places of worship across Sydney. Fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["community-centres-cleaning", "commercial-cleaning", "event-venues-cleaning"],
+  },
+  {
+    slug: "community-centres-cleaning",
+    name: "Community Centres Cleaning",
+    shortName: "Community Centres",
+    icon: "Users",
+    image: "/photos/service-community-centres.jpg",
+    tagline: "Flexible cleaning for busy, multi-use community facilities.",
+    heroSubtitle:
+      "Cleaning for community centres and multi-purpose facilities across Sydney, built around a full calendar of bookings and events.",
+    quickAnswer:
+      "Arise Property Care provides community centre cleaning across Sydney covering halls, kitchens, bathrooms and shared spaces, with flexible scheduling that fits around back-to-back bookings and events.",
+    description: [
+      "Community centres rarely sit still — a single day might see a playgroup, a fitness class and an evening function all use the same hall. We clean around your bookings, prioritising high-traffic areas and turning rooms around quickly between uses.",
+      "Every job follows a documented checklist covering halls, kitchens, bathrooms and entry areas, so your facility is presentation-ready for whoever walks through the door next.",
+    ],
+    features: [
+      "Main hall and multi-purpose room cleaning",
+      "Kitchen and tea-making area cleaning",
+      "Bathroom cleaning and consumable restocking",
+      "Entry area and glass surface cleaning",
+      "Quick turnaround between bookings",
+      "Flexible scheduling around your calendar",
+    ],
+    idealFor: [
+      "Council and community centres",
+      "Multi-purpose halls and function rooms",
+      "Youth and seniors' centres",
+      "Sporting clubs and recreation facilities",
+    ],
+    faqs: [
+      {
+        question: "Can you clean between back-to-back bookings?",
+        answer:
+          "Yes, we can schedule quick turnaround cleans between bookings so your hall or facility is ready for the next group without delay.",
+      },
+      {
+        question: "Do you offer regular contracts or one-off cleans?",
+        answer:
+          "Both — we can set up a recurring schedule around your typical bookings, or provide one-off cleans after larger events.",
+      },
+    ],
+    metaTitle: "Community Centre Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Flexible cleaning for community centres and multi-purpose facilities across Sydney. Fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["church-cleaning", "event-venues-cleaning", "commercial-cleaning"],
+  },
+  {
+    slug: "dental-clinics-cleaning",
+    name: "Dental Clinics Cleaning",
+    shortName: "Dental Clinics",
+    icon: "Smile",
+    image: "/photos/service-dental-clinics.jpg",
+    tagline: "Infection-control-aware cleaning for dental practices.",
+    heroSubtitle:
+      "Scheduled cleaning for dental clinics across Sydney, respecting clinical boundaries and appointment schedules.",
+    quickAnswer:
+      "Arise Property Care provides dental clinic cleaning across Sydney covering reception, treatment rooms and staff areas, scheduled around appointment times with cleaners briefed on clinical hygiene boundaries.",
+    description: [
+      "Dental clinics need a cleaner who understands the difference between a waiting room and a treatment room. We clean reception and common areas to the same presentation standard as any commercial fit-out, while respecting clinical boundaries, restricted zones and waste handling protocols in treatment areas.",
+      "Cleaning is scheduled around your appointment book — before opening, between sessions or after the last patient — so it never disrupts your clinic's day.",
+    ],
+    features: [
+      "Reception and waiting area cleaning",
+      "Treatment room and clinical surface cleaning",
+      "High-touch surface disinfection",
+      "Staff area and hallway cleaning",
+      "Bathroom cleaning and restocking",
+      "Scheduling around appointment times",
+    ],
+    idealFor: [
+      "Dental practices and clinics",
+      "Orthodontic practices",
+      "Allied dental and specialist suites",
+      "Multi-chair dental clinics",
+    ],
+    faqs: [
+      {
+        question: "Do your cleaners understand clinical boundaries in a dental practice?",
+        answer:
+          "Yes, our teams are briefed on working respectfully around treatment rooms, clinical waste and restricted areas, focusing general cleaning on reception, staff and common areas.",
+      },
+      {
+        question: "Can cleaning be scheduled between patient appointments?",
+        answer:
+          "Yes, we can schedule around your appointment book, including before opening, during quieter periods, or after the clinic closes.",
+      },
+    ],
+    metaTitle: "Dental Clinic Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Infection-control-aware cleaning for dental clinics across Sydney. Flexible scheduling around appointments. Get a free quote today.",
+    relatedSlugs: ["medical-centre-cleaning", "office-cleaning", "commercial-cleaning"],
+  },
+  {
+    slug: "event-venues-cleaning",
+    name: "Event Venues & Function Centres Cleaning",
+    shortName: "Event Venues",
+    icon: "PartyPopper",
+    image: "/photos/service-event-venues.jpg",
+    tagline: "Fast turnaround cleaning before, during and after your event.",
+    heroSubtitle:
+      "Pre-event, during-event and post-event cleaning for function centres and event venues across Sydney.",
+    quickAnswer:
+      "Arise Property Care provides event venue cleaning across Sydney covering pre-event presentation, high-traffic areas during functions, and full post-event turnarounds — including early morning, late-night and short-notice bookings.",
+    description: [
+      "Function centres and event venues run on tight schedules, and presentation matters the moment guests walk in. We prepare venues before doors open, manage high-traffic pressure points like bars, dance floors and dining areas during multi-day bookings, and handle the full post-event turnaround once the last guest leaves.",
+      "We understand events don't always run to a predictable calendar — we're available for early morning, overnight and short-notice bookings to fit around your event schedule.",
+    ],
+    features: [
+      "Pre-event presentation cleaning",
+      "High-traffic area servicing during events",
+      "Post-event cleanup and floor restoration",
+      "Restroom cleaning and restocking",
+      "Table, chair and decoration removal support",
+      "Early morning, late-night and short-notice availability",
+    ],
+    idealFor: [
+      "Function centres and reception venues",
+      "Conference and event spaces",
+      "Wedding and party venues",
+      "Venue managers needing fast turnarounds",
+    ],
+    faqs: [
+      {
+        question: "Can you clean on short notice?",
+        answer:
+          "Yes, we accommodate short-notice and emergency bookings where possible — get in touch and we'll do our best to fit your event timeline.",
+      },
+      {
+        question: "Do you handle post-event pack-down?",
+        answer:
+          "We handle the cleaning side of pack-down, including debris removal and floor restoration; let us know if you also need help with table and chair removal.",
+      },
+    ],
+    metaTitle: "Event Venue & Function Centre Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Pre and post-event cleaning for function centres and event venues across Sydney. Fast turnarounds, flexible scheduling. Get a free quote today.",
+    relatedSlugs: ["community-centres-cleaning", "church-cleaning", "commercial-cleaning"],
+  },
+  {
+    slug: "government-buildings-cleaning",
+    name: "Government Buildings Cleaning",
+    shortName: "Government Buildings",
+    icon: "Landmark",
+    image: "/photos/service-government-buildings.jpg",
+    tagline: "Compliant, security-aware cleaning for public and government sites.",
+    heroSubtitle:
+      "Scheduled cleaning for government buildings and public facilities across Sydney, delivered by police-checked, fully insured teams.",
+    quickAnswer:
+      "Arise Property Care provides government building cleaning across Sydney covering public areas, staff spaces and washrooms, with staff who follow site access protocols and work respectfully around restricted or secure areas.",
+    description: [
+      "Government and public buildings come with their own access rules, sign-in procedures and security considerations. Our teams follow your site's protocols, respect restricted areas, and communicate clearly about what's off-limits before a single job starts.",
+      "From public-facing reception and waiting areas to staff offices and shared facilities, every job runs to a documented checklist and is backed by full public liability insurance and police-checked staff.",
+    ],
+    features: [
+      "Public area and reception cleaning",
+      "Staff office and meeting room cleaning",
+      "Washroom cleaning and restocking",
+      "Site access and sign-in compliance",
+      "Respect for restricted and secure areas",
+      "Fully insured, police-checked staff",
+    ],
+    idealFor: [
+      "Local and state government buildings",
+      "Public service offices",
+      "Libraries and civic centres",
+      "Council-managed facilities",
+    ],
+    faqs: [
+      {
+        question: "Can your staff follow our site's security and sign-in requirements?",
+        answer:
+          "Yes, our cleaners follow site access rules, sign-in procedures and any restricted-area instructions provided for your building.",
+      },
+      {
+        question: "Are your cleaners police-checked?",
+        answer: "Yes, every cleaner is police-checked before starting any job, government sites included.",
+      },
+    ],
+    metaTitle: "Government Building Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Compliant, security-aware cleaning for government and public buildings across Sydney. Fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["office-cleaning", "commercial-cleaning", "community-centres-cleaning"],
+  },
+  {
+    slug: "gyms-fitness-cleaning",
+    name: "Gyms & Fitness Centres Cleaning",
+    shortName: "Gyms & Fitness",
+    icon: "Dumbbell",
+    image: "/photos/service-gyms-fitness.jpg",
+    tagline: "Hygiene-focused cleaning for gyms, studios and fitness facilities.",
+    heroSubtitle:
+      "Equipment sanitisation and facility cleaning for gyms and fitness centres across Sydney, scheduled around your peak hours.",
+    quickAnswer:
+      "Arise Property Care provides gym and fitness centre cleaning across Sydney covering equipment sanitisation, changerooms and common areas, with scheduling built around peak class times and after-hours servicing available.",
+    description: [
+      "Gyms see constant high-contact use — equipment, mats, benches and changerooms all need regular, thorough attention to stay genuinely hygienic, not just tidy. We sanitise training floors and equipment, keep moisture-prone changerooms and showers on top of grime, and manage odour control across the facility.",
+      "We schedule around your peak hours and class timetable, with early morning and after-hours servicing available so cleaning never gets in the way of members.",
+    ],
+    features: [
+      "Training equipment sanitisation",
+      "Changeroom, shower and locker cleaning",
+      "Reception and common area cleaning",
+      "Mirror, glass and floor cleaning",
+      "Odour control in high-use areas",
+      "Scheduling around peak hours and classes",
+    ],
+    idealFor: [
+      "Gyms and fitness studios",
+      "Boutique and group fitness studios",
+      "Recreation and leisure centres",
+      "Multi-site fitness chains",
+    ],
+    faqs: [
+      {
+        question: "Do you sanitise gym equipment, not just floors?",
+        answer:
+          "Yes, equipment sanitisation is a core part of our gym cleaning service, alongside floors, mats, mirrors and changerooms.",
+      },
+      {
+        question: "Can cleaning happen outside peak hours?",
+        answer:
+          "Yes, we schedule around your class timetable and peak periods, with early morning and after-hours options available.",
+      },
+    ],
+    metaTitle: "Gym & Fitness Centre Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Equipment sanitisation and hygiene-focused cleaning for gyms and fitness centres across Sydney. Flexible scheduling. Get a free quote today.",
+    relatedSlugs: ["commercial-cleaning", "medical-centre-cleaning", "community-centres-cleaning"],
+  },
+  {
+    slug: "aged-care-cleaning",
+    name: "Aged Care Facilities Cleaning",
+    shortName: "Aged Care",
+    icon: "HeartPulse",
+    image: "/photos/service-ndis.jpg",
+    tagline: "Considerate, high-standard cleaning for aged care environments.",
+    heroSubtitle:
+      "Scheduled cleaning for aged care facilities across Sydney, delivered with care around residents and shared living spaces.",
+    quickAnswer:
+      "Arise Property Care provides aged care facility cleaning across Sydney covering resident areas, dining rooms and shared spaces, with police-checked staff briefed on working respectfully around residents and their belongings.",
+    description: [
+      "Aged care facilities are home for the people who live there, not just a building to be cleaned. Our teams are briefed on working respectfully around residents, their belongings and daily routines, paying close attention to high-touch shared surfaces like handrails, door handles and common room furniture.",
+      "We work with facility management to schedule around resident routines and any restricted or clinical areas, backed by full insurance and police-checked staff.",
+    ],
+    features: [
+      "Resident room and corridor cleaning",
+      "Dining room and common area cleaning",
+      "High-touch surface disinfection",
+      "Bathroom and wash area cleaning",
+      "Respectful conduct around residents",
+      "Scheduling around facility routines",
+    ],
+    idealFor: [
+      "Aged care and residential care facilities",
+      "Independent and assisted living communities",
+      "Retirement villages with shared facilities",
+      "Facility and care managers",
+    ],
+    faqs: [
+      {
+        question: "Are your cleaners briefed on working around residents?",
+        answer:
+          "Yes, our teams are briefed on working respectfully and quietly around residents, their belongings and daily routines.",
+      },
+      {
+        question: "Can you work around clinical or restricted areas?",
+        answer:
+          "Yes, we work with facility management to understand any restricted or clinical zones before starting, and follow the instructions provided for each site.",
+      },
+    ],
+    metaTitle: "Aged Care Facility Cleaning Sydney | Arise Property Care",
+    metaDescription:
+      "Considerate, high-standard cleaning for aged care facilities across Sydney. Fully insured, police-checked cleaners. Get a free quote today.",
+    relatedSlugs: ["ndis-cleaning", "medical-centre-cleaning", "commercial-cleaning"],
   },
 ];
 
