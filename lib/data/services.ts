@@ -646,7 +646,7 @@ export const services: Service[] = [
     name: "Church Cleaning",
     shortName: "Church",
     icon: "Church",
-    image: "/photos/service-commercial.jpg",
+    image: "/photos/service-church.jpg",
     tagline: "Respectful, reliable cleaning for churches and places of worship.",
     heroSubtitle:
       "Scheduled cleaning for churches, chapels and places of worship across Sydney, built around your services and events.",
@@ -921,7 +921,7 @@ export const services: Service[] = [
     name: "Aged Care Facilities Cleaning",
     shortName: "Aged Care",
     icon: "HeartPulse",
-    image: "/photos/service-ndis.jpg",
+    image: "/photos/service-aged-care.jpg",
     tagline: "Considerate, high-standard cleaning for aged care environments.",
     heroSubtitle:
       "Scheduled cleaning for aged care facilities across Sydney, delivered with care around residents and shared living spaces.",

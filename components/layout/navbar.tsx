@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, Mail, ChevronDown, ArrowRight } from "lucide-react";
@@ -19,12 +19,32 @@ export function Navbar() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaMenuKey | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMegaMenu = (key: MegaMenuKey) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setOpenMenu(key);
+  };
+
+  const scheduleCloseMegaMenu = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => setOpenMenu(null), 400);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
   }, []);
 
   const transparent = isHome && !scrolled;
@@ -86,8 +106,8 @@ export function Navbar() {
                 <div
                   key={link.label}
                   className="relative"
-                  onMouseEnter={() => setOpenMenu(megaMenuKey)}
-                  onMouseLeave={() => setOpenMenu(null)}
+                  onMouseEnter={() => openMegaMenu(megaMenuKey)}
+                  onMouseLeave={scheduleCloseMegaMenu}
                 >
                   <Link
                     href={link.href}
@@ -104,6 +124,8 @@ export function Navbar() {
                   </Link>
 
                   <div
+                    onMouseEnter={() => openMegaMenu(megaMenuKey)}
+                    onMouseLeave={scheduleCloseMegaMenu}
                     className={cn(
                       "transition-all duration-200",
                       isLarge
