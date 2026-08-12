@@ -154,7 +154,7 @@ export function Navbar() {
                             </span>
                             <span>
                               <span className="block text-sm font-semibold text-brand-navy-900">
-                                {service.shortName}
+                                {service.slug === "ndis-cleaning" ? "NDIS Cleaning" : service.shortName}
                               </span>
                               <span className="block text-xs text-brand-grey-500 leading-snug mt-0.5">
                                 {service.tagline}

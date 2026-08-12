@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ShieldCheck,
-  Leaf,
   Award,
-  Users2,
   MapPin,
   ArrowRight,
   ShieldHalf,
@@ -28,30 +25,30 @@ export const metadata: Metadata = buildMetadata({
   path: "/about",
 });
 
-const values = [
+const trustReasons = [
   {
-    icon: ShieldCheck,
-    title: "Trust, first",
+    icon: Building2,
+    title: "Commercial Experience",
     description:
-      "Every cleaner is police-checked and fully insured before they set foot on a job — no exceptions.",
+      "We have hands-on experience cleaning a wide range of commercial environments and offer flexible scheduling to avoid disrupting your business. Every corner and surface is cleaned with care and pride.",
   },
   {
-    icon: Leaf,
-    title: "Genuinely eco-friendly",
+    icon: ShieldHalf,
+    title: "Insurance & Compliance",
     description:
-      "Non-toxic, commercial-grade products as standard, safe for kids, pets and allergy sufferers.",
+      "You can be assured of stringent health and safety standards and detailed insurance coverage — our team carries $20 million in public liability insurance, and every cleaner is police-checked and trained.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Flexibility & Consistency",
+    description:
+      "We can clean during the day or night to avoid disruption, and adjust schedules over time as your needs change. Consistent, high-quality standards are guaranteed on every visit.",
   },
   {
     icon: Award,
-    title: "Held to a standard",
+    title: "Experienced Cleaning Team",
     description:
-      "Every job follows a documented checklist and is backed by our 100% satisfaction guarantee.",
-  },
-  {
-    icon: Users2,
-    title: "Consistent teams",
-    description:
-      "Wherever possible, the same cleaner returns to your property so they get to know how you like things done.",
+      "Our staff have an extensive background in professional cleaning, trained in efficient, eco-friendly techniques using modern equipment — always punctual, polite and easy to work with.",
   },
 ];
 
@@ -258,21 +255,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Reasons to trust */}
       <section className="border-t border-brand-grey-200 bg-brand-grey-50 py-20 sm:py-24">
         <div className="container-premium">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-heading text-3xl font-bold text-brand-navy-900">What we stand for</h2>
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="font-heading text-3xl font-bold text-brand-navy-900 sm:text-4xl">
+              Reasons to Trust Arise Property Care
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-brand-grey-600">
+              We offer an extensive range of cleaning services to homes and businesses across
+              Sydney — tailored to your budget and based on your specific needs.
+            </p>
           </Reveal>
-          <StaggerGroup className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map(({ icon: Icon, title, description }) => (
+          <StaggerGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {trustReasons.map(({ icon: Icon, title, description }) => (
               <StaggerItem key={title}>
-                <div className="h-full rounded-2xl border border-brand-grey-200 bg-white p-6">
-                  <span className="flex size-11 items-center justify-center rounded-xl bg-brand-emerald-50 text-brand-emerald-600">
-                    <Icon className="size-5" />
+                <div className="h-full rounded-2xl bg-brand-emerald-600 p-7 text-white">
+                  <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
+                    <Icon className="size-7" />
                   </span>
-                  <h3 className="mt-4 font-heading text-base font-semibold text-brand-navy-900">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-brand-grey-500">{description}</p>
+                  <h3 className="mt-5 font-heading text-lg font-semibold">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/85">{description}</p>
                 </div>
               </StaggerItem>
             ))}
