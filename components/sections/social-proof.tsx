@@ -4,7 +4,7 @@ import { StatCounter } from "@/components/shared/stat-counter";
 import { Reveal } from "@/components/shared/reveal";
 
 const stats = [
-  { value: siteConfig.stats.googleRating, decimals: 1, suffix: "/5", label: "Google Rating" },
+  { value: siteConfig.stats.googleRating, decimals: 1, suffix: "/5", label: "Customer Rating" },
   { value: siteConfig.stats.jobsCompleted, suffix: "+", label: "Jobs Completed" },
   { value: siteConfig.stats.yearsExperience, suffix: "+", label: "Years Experience" },
   { value: siteConfig.stats.satisfactionRate, suffix: "%", label: "Satisfaction Rate" },
@@ -19,7 +19,7 @@ export function SocialProof() {
             {stats.map((stat) => (
               <div key={stat.label} className="bg-white px-6 py-8 text-center sm:px-4">
                 <p className="font-heading text-3xl font-bold text-brand-navy-900 sm:text-4xl">
-                  {stat.label === "Google Rating" && (
+                  {stat.label === "Customer Rating" && (
                     <Star className="mb-1 inline-block size-6 -translate-y-0.5 fill-brand-emerald-500 text-brand-emerald-500" />
                   )}
                   <StatCounter value={stat.value} decimals={stat.decimals ?? 0} suffix={stat.suffix} />

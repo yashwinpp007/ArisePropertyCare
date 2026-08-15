@@ -55,7 +55,7 @@ const trustReasons = [
 const stats = [
   { value: siteConfig.stats.yearsExperience, suffix: "+", label: "Years in business" },
   { value: siteConfig.stats.jobsCompleted, suffix: "+", label: "Jobs completed" },
-  { value: siteConfig.stats.googleRating, decimals: 1, suffix: "/5", label: "Google rating" },
+  { value: siteConfig.stats.googleRating, decimals: 1, suffix: "/5", label: "Customer rating" },
   { value: siteConfig.stats.satisfactionRate, suffix: "%", label: "Satisfaction guarantee" },
 ];
 

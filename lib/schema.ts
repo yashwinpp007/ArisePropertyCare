@@ -75,11 +75,6 @@ export function localBusinessSchema() {
         closes: "16:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: siteConfig.stats.googleRating,
-      reviewCount: siteConfig.stats.googleReviewCount,
-    },
     sameAs: Object.values(siteConfig.social),
   };
 }

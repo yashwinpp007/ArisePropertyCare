@@ -9,7 +9,7 @@ import { QuoteForm } from "@/components/forms/quote-form";
 import { siteConfig } from "@/lib/site-config";
 
 const trustItems = [
-  { icon: Star, label: `${siteConfig.stats.googleRating} Google Rating`, sub: `${siteConfig.stats.googleReviewCount}+ reviews` },
+  { icon: Star, label: `${siteConfig.stats.googleRating} Star Rating`, sub: "Customer satisfaction" },
   { icon: Users, label: `${siteConfig.stats.yearsExperience}+ Years`, sub: "Experience" },
   { icon: ShieldCheck, label: "Fully Insured", sub: "Public liability" },
   { icon: BadgeCheck, label: "Police Checked", sub: "Every cleaner" },

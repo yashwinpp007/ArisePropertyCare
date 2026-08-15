@@ -19,7 +19,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="Customer Reviews"
           title="What Sydney locals say about us"
-          subtitle={`Rated ${siteConfig.stats.googleRating}/5 from ${siteConfig.stats.googleReviewCount}+ verified Google reviews.`}
+          subtitle={`Rated ${siteConfig.stats.googleRating}/5 by Sydney homes and businesses.`}
         />
 
         <div className="mx-auto mt-14 max-w-6xl px-2 sm:px-12">
